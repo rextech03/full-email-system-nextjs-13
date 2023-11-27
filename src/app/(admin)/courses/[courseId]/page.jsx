@@ -1,6 +1,5 @@
 import { getPost } from "../../../lib/tutorialscrud";
 
-// import Avatar from "@/app/components/Avatar";
 import Deletetutorial from "./deleteTutorial";
 import Link from "next/link";
 
@@ -25,6 +24,8 @@ const Category = async ({ params }) => {
           : <p>UnPublished</p>}
           </div>
           <p className="text-sm" >Created On: <Date dateString={course.createdAt} /> </p>
+          <p className="text-sm">Belongs to {course.section.title} category</p>
+          <p lassName="text-sm">Posted By {course.author.name}</p>
         </div>
         <div className="flex justify-between space-x-4">
         <Link href={`/courses/edit/${courseId}`} className='py-2 px-4 bg-black text-white rounded'>

@@ -2,7 +2,6 @@ import { redirect } from "next/navigation";
 import prisma from "./prisma";
 
 type categoryData = {
- 
   title: string;
   content: string | null;
   published: boolean;
@@ -11,11 +10,9 @@ type categoryData = {
   }
 
   type updateCategoryData = {
-   
     title: string;
     content: string | null;
     published: boolean;
-    // featuredImage: string | null;
     grouperId: string;
   }
 
@@ -27,7 +24,6 @@ type categoryData = {
 export const getCategories = async () => {
   try {
     const category = await prisma.category.findMany();
-    
     return { category };
   } catch (error) {
     return { error };
@@ -39,6 +35,10 @@ export const getCategory = async (id: string) => {
     const category = await prisma.category.findUnique({
       where: {
         id,
+      },
+      include: {
+        grouper: {},
+        posts: {},
       },
     });
     return { category };

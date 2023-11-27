@@ -33,14 +33,34 @@ type postData = {
     courseVideo: string | null;
   }
   
+
 export const getPosts = async () => {
   try {
-    const posts = await prisma.post.findMany();
+    const posts = await prisma.post.findMany({
+      select: {
+        id: true,
+        title:true,
+        content: true,
+        published: true,
+        courseVideo: true,
+        featuredImage: true,
+        finalCourse: true,
+        section:{
+              
+            },
+            author: {
+              
+            },
+            updatedAt: true,
+   },
+  });
+  
     return { posts };
   } catch (error) {
     return { error };
   }
 };
+
 
 export const getPost = async (id: string) => {
   try {
@@ -48,8 +68,12 @@ export const getPost = async (id: string) => {
       where: {
         id,
       },
+      include: {
+        section: {},
+        author: {}
+      },
     });
-    // console.log(post)
+    // console.log(post);
     return { post };
   } catch (error) {
     return { error };
