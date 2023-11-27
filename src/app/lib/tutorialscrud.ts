@@ -7,7 +7,7 @@ type postData = {
   content: string | null;
   published: boolean;
   featuredImage: string | null;
-  courseVideo: string| null;
+  // courseVideo: string| null;
   finalCourse: boolean| null;
   authorId: string;
   sectionId: string;
@@ -27,6 +27,11 @@ type postData = {
     id: string,
     featuredImage: string | null;
   }
+
+  type uploadVideo = {
+    id: string,
+    courseVideo: string | null;
+  }
   
 export const getPosts = async () => {
   try {
@@ -44,6 +49,7 @@ export const getPost = async (id: string) => {
         id,
       },
     });
+    // console.log(post)
     return { post };
   } catch (error) {
     return { error };
@@ -80,7 +86,16 @@ export const deletePost = async (id:string) => {
 export const uploadImage = async ( uploadData:uploadData) => {
   try {
     await prisma.post.update({ where: { id: uploadData.id }, data: uploadData });
-    return { category: uploadData };
+    return { post: uploadData };
+  } catch (error) {
+    return { error };
+  }
+};
+
+export const uploadVideo = async ( uploadVideo:uploadVideo) => {
+  try {
+    await prisma.post.update({ where: { id: uploadVideo.id }, data: uploadVideo });
+    return { post: uploadVideo };
   } catch (error) {
     return { error };
   }

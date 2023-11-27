@@ -1,5 +1,3 @@
-// "use client";
-// import { useState, useEffect } from "react";
 import { Button, buttonVariants } from "@/components/ui/button"
 import {
   Card,
@@ -50,19 +48,7 @@ const CourseForm = async () => {
 
   const  users = await getUsers();
   const  categories = await getCategories();
-  // const router = useRouter();
   
-  // const [title, setTitle] = useState('');
-  // const [content, setContent] = useState('');
-  // const [published, setPublished] = useState(false);
-  // const [grouperId, setGrouperId] = useState('');
-  // const [message, setMessage] = useState('')
-  // const [users, setUsers] = useState([]);
-
-  
-    
-  
-
   async function create(formData: FormData) {
         'use server'
         // event.preventDefault();

@@ -18,6 +18,8 @@ model Post {
   content   String?
   published Boolean  @default(false)
   featuredImage String?
+  courseVideo String?
+  finalCourse Boolean? @default(false)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -41,8 +43,7 @@ model Category {
   content   String?
   published Boolean  @default(false)
   featuredImage String?
-  courseVideo String?
-  finalCourse Boolean?
+  
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

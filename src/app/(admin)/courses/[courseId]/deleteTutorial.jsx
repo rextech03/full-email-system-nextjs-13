@@ -1,6 +1,7 @@
 "use client";
 import { deleteCategoryAction } from "../../../actions/categoriescrud";
 import { useState } from "react";
+import { Button, buttonVariants } from "@/components/ui/button"
 
 const DeleteTutorial = ({ id }) => {
   const [pending, setPending] = useState(false);
@@ -12,18 +13,18 @@ const DeleteTutorial = ({ id }) => {
 
   return (
     <form>
-      <button
+      <Button
         type="submit"
         onClick={handleDeleteCategory}
-        className="btn btn-error btn-sm btn-outline"
+        // className="btn btn-error btn-sm btn-outline"
         aria-disabled={pending}
         disabled={pending}
       >
         {pending && <span className="loading loading-spinner"></span>}
         Delete
-      </button>
+      </Button>
     </form>
   );
 };
 
-export default DeleteCategory;
+export default DeleteTutorial;

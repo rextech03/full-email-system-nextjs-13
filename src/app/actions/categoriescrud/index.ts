@@ -63,6 +63,8 @@ export async function uploadImageAction( data: any ) {
   }
 }
 
+
+
 export async function deleteCategoryAction(id:string) {
   await deleteCategory(id);
   revalidatePath("/categories");

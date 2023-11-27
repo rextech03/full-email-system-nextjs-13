@@ -7,8 +7,8 @@ import Deletetutorial from "./[courseId]/deleteTutorial";
       
 const CoursesList = async () => {
   const  data  = await getPosts();
-  const tutorials = data.tutorial;
-  // console.log(categories);
+  const tutorials = data.posts;
+  // console.log(tutorials);
   let counter = 1
   return (
     <div className="grid place-items-center min-h-screen">
@@ -29,24 +29,24 @@ const CoursesList = async () => {
         <tr key={tutorial.id} className="">
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200"><p className="pr-4">{counter++}</p> </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
-            <Link href={`/categories/${tutorial.id}`} className="">
+            <Link href={`/courses/${tutorial.id}`} className="">
             <span className="ml-2">{tutorial.title }</span>
           </Link>
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
-            <Link href={`/categories/${tutorial.id}`} className="flex ">
+            <Link href={`/courses/${tutorial.id}`} className="flex ">
             <span className="ml-2">{tutorial.content}</span>
           </Link>
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
-            <Link href={`/categories/${tutorial.id}`} className="flex ">
+            <Link href={`/courses/${tutorial.id}`} className="flex ">
             <span className="ml-2">{tutorial.published ?
            <p>Published</p> 
           : <p>UnPublished</p>}</span>
           </Link>
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
-            <Link href={`/categories/${tutorial.id}`} className="flex ">
+            <Link href={`/courses/${tutorial.id}`} className="flex ">
             <span className="ml-2">
               <Image 
               alt="featured Image" 
@@ -56,8 +56,15 @@ const CoursesList = async () => {
               />
               </span>
           </Link>
+
+          
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200"><Deletetutorial id={tutorial.id} /></td>
+          <td className="flex px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
+            <Deletetutorial id={tutorial.id} />
+            <Link href={`/courses/courseVideo/${tutorial.id}`} className='py-2 px-4 bg-black text-white rounded'>
+          Edit Featured Image
+        </Link>
+            </td>
         </tr>
       ))}
     

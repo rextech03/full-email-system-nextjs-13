@@ -1,6 +1,6 @@
 "use server";
 
-import { uploadImage, createPost, deletePost, updatePost } from "../../lib/tutorialscrud";
+import { uploadVideo, uploadImage, createPost, deletePost, updatePost } from "../../lib/tutorialscrud";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
@@ -14,7 +14,7 @@ export async function createPostAction(data: any) {
       featuredImage: data.result.secure_url,
       authorId: data.authorId,
       sectionId: data.sectionId,
-      courseVideo: data.courseVideo,
+      // courseVideo: data.courseVideo,
       finalCourse: data.finalCourse,
         
     };
@@ -26,22 +26,23 @@ export async function createPostAction(data: any) {
   }
 }
 
-export async function updatePostAction(prevState:string, formData: any) {
+export async function updatePostAction( data:any) {
   try {
-    const id = formData.get("id");
+    const id = data.id;
     const postData = {
-      title: formData.get("title"),
-      content: formData.get("content"),
-      published: formData.get("published"),
-      featuredImage: formData.get("featuredImage"),
-      authorId: formData.get("authorId"),
-      finalCourse: formData.get("authorId"),
+      title: data.title,
+      content: data.content,
+      published: data.published,
+      featuredImage: data.result.secure_url,
+      authorId: data.authorId,
+      sectionId: data.sectionId,
+      finalCourse: data.finalCourse,    
     };
-    // console.log(userData)
+    // console.log(id);
     const { post, error } = await updatePost(id, postData);
     if (error) throw error;
     revalidatePath("/tutorials");
-    revalidatePath(`/tutorials/${formData.get("id")}`);
+    revalidatePath(`/tutorials/${data.id}`);
     return { status: "ok", message: "Tutorial created with success", post };
   } catch (error) {
     return { status: "nok", message: "Failed to update tutorial." };
@@ -57,16 +58,34 @@ export async function deleteUserAction(id:string) {
 export async function uploadImageAction( data: any ) {
   try {
     const id = data.categoryId;
-    const categoryData = {
+    const postData = {
       id : data.categoryId,
       featuredImage: data.result.secure_url, 
     };
-   console.log(categoryData);
-    const { category, error } = await uploadImage( categoryData);
+   console.log(postData);
+    const { post, error } = await uploadImage( postData);
     if (error) throw error;
-    revalidatePath("/categories");
-    revalidatePath(`/categories/${data.id}`);
-    return { status: "ok", message: "Category created with success", category };
+    revalidatePath("/courses");
+    revalidatePath(`/courses/${data.id}`);
+    return { status: "ok", message: "Course created with success", post };
+  } catch (error) {
+    return { status: "nok", message: "Failed to update course." };
+  }
+}
+
+export async function uploadVideoAction( data: any ) {
+  try {
+    // const id = data.categoryId;
+    const postData = {
+      id : data.courseId,
+      courseVideo: data.result.secure_url, 
+    };
+   console.log(postData);
+    const { post, error } = await uploadVideo( postData);
+    if (error) throw error;
+    revalidatePath("/courses");
+    revalidatePath(`/courses/${data.id}`);
+    return { status: "ok", message: "Category created with success", post };
   } catch (error) {
     return { status: "nok", message: "Failed to update category." };
   }
