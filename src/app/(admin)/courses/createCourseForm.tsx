@@ -68,7 +68,6 @@ const CourseForm = async () => {
         // event.preventDefault();
 
         const file = formData.get('featuredImage') as File;
-        const videoFile = formData.get('courseVideo') as File;
         const title = formData.get('title');
         const content = formData.get('content');
         const published = formData.get('published') === null ? false : true;
@@ -76,9 +75,8 @@ const CourseForm = async () => {
         const sectionId = formData.get('sectionId');
         const authorId = formData.get('authorId');
         const arrayBuffer = await file.arrayBuffer();
-        const videoBuffer = await videoFile.arrayBuffer();
         const buffer = new Uint8Array(arrayBuffer);
-        const videobuffer = new Uint8Array(videoBuffer);
+       
     await new Promise((resolve, reject) => {
       cloudinary.uploader.upload_stream({
         tags: ['category']
@@ -89,7 +87,7 @@ const CourseForm = async () => {
         }
         resolve(result);
        
-        const data = {title, content, published, result, sectionId, authorId, courseVideo, finalCourse }
+        const data = {title, content, published, result, sectionId, authorId, finalCourse }
         createPostAction(data);
         
       })
@@ -213,21 +211,6 @@ const CourseForm = async () => {
         ))}
       </select>
     </div>
-      </div>
-      </CardContent>
-
-      <CardContent className="grid gap-4">
-      <div className=" flex justify-items-end items-center">
-      <label htmlFor="courseVideo" className="block font-semibold text-sm mb-2">
-            Upload Course Video
-          </label>
-          <input
-            id="courseVideo"
-            className="block w-full border-slate-400 rounded focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-            type="file"
-            name="courseVideo"
-            required
-          />
       </div>
       </CardContent>
 
