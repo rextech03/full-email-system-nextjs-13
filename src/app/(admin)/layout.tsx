@@ -1,6 +1,8 @@
 import { getServerSession } from 'next-auth/next';
 import React from 'react'
 import { authOptions } from '../api/auth/[...nextauth]/route';
+import NavAdmin from '../components/NavAdmin';
+import Footer from '../components/Footer';
 
 interface ProtectedLayoutProps {
     children: React.ReactNode | React.ReactNode[];
@@ -20,7 +22,9 @@ const ProtectedLayout = async ({children}: ProtectedLayoutProps) => {
 
   return (
     <>
+    <NavAdmin />
         {children}
+        <Footer />
     </>
   );
 }

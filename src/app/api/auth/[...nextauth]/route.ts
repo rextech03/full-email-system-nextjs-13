@@ -41,7 +41,7 @@ export const authOptions: AuthOptions = {
 
                 const userPassword = user.passwordHash;
 
-                const isValidPassword = bcrypt.compareSync(password, userPassword);
+                const isValidPassword = bcrypt.compareSync(password , userPassword);
 
                 if(!isValidPassword) {
                     return null;
@@ -94,12 +94,19 @@ export const authOptions: AuthOptions = {
             account?: Account | null | undefined;
             profile?: Profile | undefined;
             isNewUser?: boolean | undefined;
+            trigger?: any;
+            session?: Session | null | undefined;
         }) {
+            // update session
+            if(params.trigger === "update" && params.session?.user?.email){
+                // params.token.email = params.session.email
+                return { ...params.token, ...params.session.user}
+            }
             if(params.user) {
                 params.token.email = params.user.email;
             }
 
-            return params.token;
+            return {...params.token, ...params.user};
         }
     }
 }

@@ -1,8 +1,13 @@
+import Link from 'next/link'
 import React from 'react'
 
 const DashboardPage = () => {
   return (
-    <div>This is the dashboard!</div>
+    <div>
+      <p>This is the dashboard!</p>
+      
+      
+    </div>
   )
 }
 

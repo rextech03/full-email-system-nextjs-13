@@ -7,8 +7,8 @@ const TestEmailButton = () => {
 
     const handleSubmit = async () => {
         sendEmail({
-            from: 'Admin <admin@modernwebdevelopment.net>',
-            to: ["modernwebdevelopmentyt@gmail.com"],
+            from: 'Admin <admin@phoenixcreedacademy.com>',
+            to: ["markogujiuba@gmail.com"],
             subject: 'Test Email',
             // text: 'This is a test email',
             // html: '<h1>This is a test email</h1>'

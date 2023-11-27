@@ -6,20 +6,75 @@ generator client {
 }
 
 datasource db {
-  provider     = "mysql"
+  provider     = "postgres"
   url          = env("DATABASE_URL")
   relationMode = "prisma"
+}
+
+model Post {
+  id        String      @id @default(cuid())
+  
+  title     String   @db.VarChar(255)
+  content   String?
+  published Boolean  @default(false)
+  featuredImage String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String
+
+  section    Category     @relation(fields: [sectionId], references: [id])
+  sectionId  String
+
+  
+
+   @@index([authorId])
+   @@index([sectionId])
+}
+
+model Category {
+  id        String      @id @default(cuid())
+  
+  title     String   @db.VarChar(255)
+  content   String?
+  published Boolean  @default(false)
+  featuredImage String?
+  courseVideo String?
+  finalCourse Boolean?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  posts   Post[]
+
+  grouper    User     @relation(fields: [grouperId], references: [id])
+  grouperId  String
+   
+  @@index([grouperId])
 }
 
 model User {
   id String @id @default(cuid())
 
-  email        String @unique
-  passwordHash String
+  name         String?
+  email        String? @unique
+  passwordHash String?
+  profileImage String?
 
   resetPasswordToken String? @unique
   resetPasswordTokenExpiry DateTime?
 
   emailVerified Boolean @default(false)
   emailVerificationToken String? @unique
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  posts   Post[]
+
+  category   Category[]
+
 }
+

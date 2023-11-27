@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "src/app/(admin)/categories/createCategoryForm.tsx", "src/app/components/uploader.tsx"  ],
   "exclude": [
     "node_modules"
   ]

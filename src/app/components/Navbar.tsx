@@ -1,33 +1,99 @@
+"use client"
 import React from 'react';
 import { authOptions } from '../api/auth/[...nextauth]/route';
-import { getServerSession } from 'next-auth/next';
+// import { getServerSession } from 'next-auth/next';
+import { useSession } from "next-auth/react"
 import Link from 'next/link';
 import TestEmailButton from './TestEmailButton';
+import Image from 'next/image';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { FaArrowDown } from "react-icons/fa";
 
-const Navbar = async () => {
-    const session = await getServerSession(authOptions);
+const Navbar = () => {
+    const { data: session, status } = useSession()
+    const [state, setState] = React.useState(false)
+
+    const menus = [
+      { title: "Login", path: "/auth/signin" },
+    //   { title: "Register", path: "/auth/signup" },
+      // { title: "About Us", path: "/your-path" },
+      // { title: "Contact Us", path: "/your-path" },
+    ]
 
     return (
-        <div className='w-full px-4 py-8 bg-gray-300 flex flex-row items-center gap-4'>
-            <Link href='/'>Home</Link>
-            <Link href='/protected/dashboard'>Dashboard</Link>
-
+        <nav className="bg-gray-300 w-full border-b md:border-0 max-w-screen">
+        <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:justify-between md:px-8">
+          <div className="flex items-center justify-between py-3 md:py-5 md:block">
+            <Link href="/">
+              <Image src="/images/logo.png" alt="logo" width={120} height={120} className="h-6 w-6" />
+            </Link>
+            <div className="md:hidden">
+              
+              <button
+                className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
+                onClick={() => setState(!state)}
+              >
+                {/* <Menu /> */}
+              </button>
+            </div>
+          </div>
+          <div
+            className={`flex justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+              state ? "block" : "hidden"
+            }`}
+          >
+            <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
             {session && session.user?.email ? (
-                <>
-                    <Link href='/auth/signout'>Sign out</Link>
-                    <p>
-                        <b>Signed in as {session.user?.email}</b>
-                    </p>
-                </>
-            ) : (
-                <>
-                    <Link href='/auth/signin'>Sign in</Link>
-                    <Link href='/auth/signup'>Sign up</Link>
-                </>
-            )}
-
-            <TestEmailButton />
+                    <>
+                      <DropdownMenu>
+                      <DropdownMenuTrigger> <div className="flex bg-gray-200 justify-items-center items-center  rounded p-2 "><p className='pr-2'>{session.user?.name}</p><FaArrowDown  /></div></DropdownMenuTrigger>
+                      <DropdownMenuContent>
+                        <DropdownMenuLabel><Link href='/dashboard'>Dashboard</Link></DropdownMenuLabel>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuLabel><Link href='/auth/signout'>Sign out</Link></DropdownMenuLabel>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                             </>
+                ) : (
+                    <>
+              {menus.map((item, idx) => (
+                <li key={idx} className="py-2 px-4 rounded bg-black text-white hover:text-black hover:border-2 hover:border-black hover:bg-white hover:py-2 hover:px-4 hover:rounded">
+                  <Link href={item.path}>{item.title}</Link>
+                </li>
+              ))}
+              </>
+              )}
+            </ul>
+          </div>
         </div>
+      </nav>
+        // <div className='w-full px-4 py-8 bg-gray-300 flex flex-row items-center gap-4'>
+        //     <Link href='/'>Home</Link>
+        //     <Link href='/dashboard'>Dashboard</Link>
+
+        //     {session && session.user?.email ? (
+        //         <>
+        //             <Link href='/auth/signout'>Sign out</Link>
+        //             <p>
+        //                 <b>Signed in as {session.user?.email}</b>
+        //             </p>
+        //         </>
+        //     ) : (
+        //         <>
+        //             <Link href='/auth/signin'>Sign in</Link>
+        //             <Link href='/auth/signup'>Sign up</Link>
+        //         </>
+        //     )}
+
+        //     <TestEmailButton />
+        // </div>
     );
 };
 

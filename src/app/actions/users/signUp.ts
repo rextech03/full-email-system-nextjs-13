@@ -6,7 +6,7 @@ import crypto from 'crypto';
 import { sendEmail } from '../emails/sendEmail';
 import { VerifyEmailEmailTemplate } from '@/app/email-templates/verify-email-email';
 
-export const signUp = async (email: string, password: string) => {
+export const signUp = async (name: string, email: string, password: string) => {
     const user = await prisma.user.findUnique({
         where: {
             email,
@@ -21,6 +21,7 @@ export const signUp = async (email: string, password: string) => {
 
     const createdUser = await prisma.user.create({
         data: {
+            name,
             email,
             passwordHash,
         },
@@ -38,7 +39,7 @@ export const signUp = async (email: string, password: string) => {
     })
 
     await sendEmail({
-        from: 'Admin <admin@modernwebdevelopment.net>',
+        from: 'Admin <admin@phoenixcreedacademy.com>',
         to: [email],
         subject: 'Verify your email address',
         react: VerifyEmailEmailTemplate({email, emailVerificationToken}) as React.ReactElement
