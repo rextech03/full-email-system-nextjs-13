@@ -60,7 +60,9 @@ export default async function page({params}) {
             <Button type='submit'>Complete</Button>
             </form>
             <p>{post?.title} </p>
-            <p>{sessiondata?.user?.name} <Date dateString={post?.createdAt} /></p>
+            <p>{sessiondata?.user?.name} 
+            {/* <Date dateString={post?.createdAt} /> */}
+            </p>
             <video src={post?.courseVideo} controls />
           </div>
         </div>

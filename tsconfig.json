@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "src/app/(admin)/categories/createCategoryForm.tsx", "src/app/components/uploader.tsx", "src/app/(admin)/tutorial/complete/[tutorialId]/page.jsx"  ],
+, "src/app/(admin)/categories/createCategoryForm.tsx", "src/app/components/uploader.tsx", "src/app/(admin)/tutorial/complete/[tutorialId]/page.jsx", "src/app/api/auth/[...nextauth]/route.ts"  ],
   "exclude": [
     "node_modules"
   ]

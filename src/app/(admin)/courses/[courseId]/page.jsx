@@ -23,7 +23,7 @@ const Category = async ({ params }) => {
            <p>Published</p> 
           : <p>UnPublished</p>}
           </div>
-          <p className="text-sm" >Created On: <Date dateString={course.createdAt} /> </p>
+          {/* <p className="text-sm" >Created On: <Date dateString={course.createdAt} /> </p> */}
           <p className="text-sm">Belongs to {course.section.title} category</p>
           <p lassName="text-sm">Posted By {course.author.name}</p>
         </div>

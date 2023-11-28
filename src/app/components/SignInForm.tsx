@@ -47,7 +47,7 @@ const SignInForm = () => {
             router.refresh();
             router.push('/');
         }
-    }, [status]);
+    }, );
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);

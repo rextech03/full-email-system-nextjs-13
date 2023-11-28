@@ -41,7 +41,7 @@ export const authOptions: AuthOptions = {
 
                 const userPassword = user.passwordHash;
 
-                const isValidPassword = bcrypt.compareSync(password , userPassword);
+                const isValidPassword = bcrypt.compareSync(password, userPassword);
 
                 if(!isValidPassword) {
                     return null;
