@@ -17,7 +17,7 @@ import { createPostAction } from "../../actions/tutorialscrud";
 
 
 
-const CourseForm = async () => {
+const CourseForm =  () => {
 
  
     const [title, setTitle] = useState('');
