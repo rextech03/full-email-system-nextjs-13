@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Button, buttonVariants } from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
@@ -27,8 +27,6 @@ export default function Page({ params }) {
   const [users, setUsers] = useState([]);
 
   const getPostCategory = async () => {
-    
-    
     try {
     const res = await axios.get(
         `https://www.phoenixcreedacademy.com/api/categories` 
