@@ -38,7 +38,7 @@ export default function Page({ params }) {
 };
   
     useEffect(() => {
-      getPostCategory();
+      getCategoryUsers();
     }, [categoryId]);
   
       const handleSubmit = (event) => {
