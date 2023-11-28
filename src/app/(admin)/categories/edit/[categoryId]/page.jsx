@@ -31,7 +31,7 @@ export default function Page({ params }) {
     
     try {
     const res = await axios.get(
-        `http://localhost:3000/api/categories` 
+        `https://www.phoenixcreedacademy.com/api/categories` 
     );
     setUsers(res.data.users);
     } catch (error) {
@@ -47,7 +47,7 @@ export default function Page({ params }) {
         event.preventDefault();
 
       try {
-        const response =  fetch('http://localhost:3000/api/categories', {
+        const response =  fetch('https://www.phoenixcreedacademy.com/api/categories', {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
