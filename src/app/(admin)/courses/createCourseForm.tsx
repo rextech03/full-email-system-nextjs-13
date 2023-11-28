@@ -19,7 +19,7 @@ import { createPostAction } from "../../actions/tutorialscrud";
 const getUsers = async () => {
   try {
   const res = await axios.get(
-      `https://www.phoenixcreedacademy/api/users` 
+      `https://www.phoenixcreedacademy.com/api/users` 
   );
   // setUsers(res.data.users);
   // console.log(res.data.users);
@@ -33,7 +33,7 @@ const getUsers = async () => {
 const getCategories = async () => {
   try {
   const res = await axios.get(
-      `https://www.phoenixcreedacademy/api/categories` 
+      `https://www.phoenixcreedacademy.com/api/categories` 
   );
   // setUsers(res.data.users);
   // console.log(res.data.users);
