@@ -9,12 +9,12 @@ export default function Banner() {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-        height: '520px',
+        // height: '520px',
        }} 
         >
         
   
-        <div className=" h-full w-full grid place-items-center">
+        <div className=" h-[34rem] w-full grid place-items-center xl:h-[72rem]">
           
           <div className="m-auto max-w-5xl py-12 sm:py-8 lg:py-2 bg-opacity-75 px-16  rounded bg-white">
             

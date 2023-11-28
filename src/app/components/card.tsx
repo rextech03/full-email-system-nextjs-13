@@ -21,9 +21,10 @@ export default function Card( props: Props ) {
       {props.description}
       </p>
     </div>
-    <div className="px-6 pt-4 pb-2 flex justify-items-between items-center">
-      <a href={props.path} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{props.buttonText}</a>
-      <p className='text-sm'>{props.amount}</p>
+    <div className="px-6 pt-4 pb-2 flex items-center justify-between">
+      <div> <a href={props.path} className="inline-block bg-gray-200 rounded-full text-sm font-semibold text-gray-700 ">{props.buttonText}</a></div>
+     <div><p className='text-sm'>{props.amount}</p></div>
+      
     </div>
   </div>
   )
