@@ -28,7 +28,7 @@ const EditForm = ({ params }) => {
   const getPostCategory = async () => {
     try {
     const res = await axios.get(
-        `http://localhost:3000/api/edit` 
+        `https://www.phoenixcreedacademy/api/edit` 
     );
     setUsers(res.data.users);
     } catch (error) {
@@ -44,7 +44,7 @@ const EditForm = ({ params }) => {
         event.preventDefault();
 
       try {
-        const response =  fetch('http://localhost:3000/api/categories', {
+        const response =  fetch('https://www.phoenixcreedacademy/api/categories', {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',

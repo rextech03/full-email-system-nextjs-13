@@ -61,7 +61,7 @@ const CoursesList = async () => {
           <td className="flex px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
             <Deletetutorial id={tutorial.id} />
             <Link href={`/courses/courseVideo/${tutorial.id}`} className='py-2 px-4 bg-black text-white rounded'>
-          Edit Featured Image
+          Edit Course Video
         </Link>
             </td>
         </tr>
