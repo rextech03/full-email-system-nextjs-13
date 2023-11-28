@@ -26,10 +26,10 @@ export default function Page({ params }) {
   const [message, setMessage] = useState('')
   const [users, setUsers] = useState([]);
 
-  const getPostCategory = async () => {
+  const getCategoryUsers = async () => {
     try {
     const res = await axios.get(
-        `https://www.phoenixcreedacademy.com/api/categories` 
+        `https://www.phoenixcreedacademy.com/api/users` 
     );
     setUsers(res.data.users);
     } catch (error) {
