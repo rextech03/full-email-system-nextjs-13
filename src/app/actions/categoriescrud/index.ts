@@ -12,7 +12,7 @@ export async function createCategoryAction( data: any) {
       title:  data.title,
       content: data.content,
       published: data.published,
-      featuredImage: data.result.secure_url,
+      // featuredImage: data.result.secure_url,
       grouperId: data.grouperId,
     };
     console.log(categoryData);

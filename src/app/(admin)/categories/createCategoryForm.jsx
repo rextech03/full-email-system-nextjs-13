@@ -44,7 +44,7 @@ const CategoryForm =  () => {
       const handleSubmit = (event) => {
         event.preventDefault();
 
-        const data = {categoryId, title, content, published, grouperId }
+        const data = { title, content, published, grouperId }
         createCategoryAction(data)
  
     };
@@ -93,7 +93,7 @@ const CategoryForm =  () => {
         />
       </div>
       </CardContent>
-      <CardContent className="grid gap-4">
+      {/* <CardContent className="grid gap-4">
       <div className=" flex justify-items-end items-center">
       <label htmlFor="image" className="block font-semibold text-sm mb-2">
             Select a Featured Image
@@ -106,7 +106,7 @@ const CategoryForm =  () => {
             required
           />
       </div>
-      </CardContent>
+      </CardContent> */}
       <CardContent className="grid gap-4 w-[180px]">
       <div className=" flex justify-items-end items-center">
        <input

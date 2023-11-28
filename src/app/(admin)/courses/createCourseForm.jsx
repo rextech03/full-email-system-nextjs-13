@@ -46,6 +46,7 @@ const CourseForm =  () => {
         `https://www.phoenixcreedacademy.com/api/categories` 
     );
     setCategories(res.data.categories);
+    console.log(res.data.categories);
     } catch (error) {
         console.log(error);
     }
@@ -61,6 +62,7 @@ const CourseForm =  () => {
   
         try {
           const data = { title, content, published, grouperId, authorId, final };
+          
           createPostAction(data);
          
         } catch (error) {
@@ -120,7 +122,7 @@ const CourseForm =  () => {
         />
       </div>
       </CardContent>
-      <CardContent className="grid gap-4">
+      {/* <CardContent className="grid gap-4">
       <div className=" flex justify-items-end items-center">
       <label htmlFor="image" className="block font-semibold text-sm mb-2">
             Select a Featured Image
@@ -133,7 +135,7 @@ const CourseForm =  () => {
             required
           />
       </div>
-      </CardContent>
+      </CardContent> */}
       <CardContent className="grid gap-4 w-[180px]">
       <div className=" flex justify-items-end items-center">
        <input

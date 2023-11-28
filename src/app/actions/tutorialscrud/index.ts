@@ -13,11 +13,12 @@ export async function createPostAction(data: any) {
       published: data.published,
       // featuredImage: data.result.secure_url,
       authorId: data.authorId,
-      sectionId: data.sectionId,
+      sectionId: data.grouperId,
       // courseVideo: data.courseVideo,
-      finalCourse: data.finalCourse,
+      finalCourse: data.final,
         
     };
+    // console.log(postData);
     const { post } = await createPost(postData);
     revalidatePath("/tutorials");
     return { status: "ok", message: "Tutorial created with success", post };
