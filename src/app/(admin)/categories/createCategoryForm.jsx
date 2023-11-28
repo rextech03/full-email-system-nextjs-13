@@ -1,3 +1,5 @@
+"use client";
+import { useState, useEffect } from "react";
 import { Button, buttonVariants } from "@/components/ui/button"
 import {
   Card,
@@ -11,74 +13,107 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import axios from "axios";
+// import { useRouter } from "next/navigation";
 import { redirect } from 'next/navigation'
 import cloudinary from '@/lib/cloudinary';
 import { createCategoryAction } from "../../actions/categoriescrud";
 
-const getCategoryUsers = async () => {
-  try {
-  const res = await axios.get(
-      `https://www.phoenixcreedacademy.com/api/users` 
-  );
-  // setUsers(res.data.users);
-  // console.log(res.data.users);
-  const users = res.data.users;
-    return users;
-  } catch (error) {
-      console.log(error);
-  }
+// const getCategoryUsers = async () => {
+//   try {
+//   const res = await axios.get(
+//       `https://www.phoenixcreedacademy.com/api/users` 
+//   );
+//   // setUsers(res.data.users);
+//   // console.log(res.data.users);
+//   const users = res.data.users;
+//     return users;
+//   } catch (error) {
+//       console.log(error);
+//   }
+// };
+
+const CategoryForm =  () => {
+
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+  const [published, setPublished] = useState(false);
+  const [featuredImage, setFeaturedImage] = useState('');
+  const [grouperId, setGrouperId] = useState('');
+  const [message, setMessage] = useState('')
+  const [users, setUsers] = useState([]);
+
+  const getCategoryUsers = async () => {
+    try {
+    const res = await axios.get(
+        `https://www.phoenixcreedacademy.com/api/users` 
+    );
+    setUsers(res.data.users);
+    } catch (error) {
+        console.log(error);
+    }
 };
-
-const CategoryForm = async () => {
-
-  const  users = await getCategoryUsers();
-  // const router = useRouter();
   
-  // const [title, setTitle] = useState('');
-  // const [content, setContent] = useState('');
-  // const [published, setPublished] = useState(false);
-  // const [grouperId, setGrouperId] = useState('');
-  // const [message, setMessage] = useState('')
-  // const [users, setUsers] = useState([]);
-
+    useEffect(() => {
+      getCategoryUsers();
+    }, []);
   
-    
-  
+      const handleSubmit = (event) => {
+        event.preventDefault();
 
-  async function create(formData: FormData) {
-        'use server'
-        // event.preventDefault();
-
-        const file = formData.get('featuredImage') as File;
-        const title = formData.get('title');
-        const content = formData.get('content');
-        const published = formData.get('published') === null ? false : true;
-        const grouperId = formData.get('grouperId');
-        const arrayBuffer = await file.arrayBuffer();
-        const buffer = new Uint8Array(arrayBuffer);
-    await new Promise((resolve, reject) => {
-      cloudinary.uploader.upload_stream({
-        tags: ['category']
-      }, function (error, result) {
-        if (error) {
-          reject(error);
-          return;
-        }
-        resolve(result);
-       
-        const data = {title, content, published, result, grouperId }
-        createCategoryAction(data);
-        
-      })
-      .end(buffer);
-    });
-
-      
+      try {
+        const response =  fetch('https://www.phoenixcreedacademy.com/api/categories', {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({categoryId, title, content, published, grouperId }),
+        });
+        // const { message } =  res.JSON()
+        // alert(message);
+      } catch (error) {
+        console.error(error);
+      }
     };
 
-    // const handleChange = (event) => {
-    //   setPublished(event.target.checked);
-    // }
+    const handleChange = (event) => {
+      setPublished(event.target.checked);
+    }
+
+
+  // async function create(formData: FormData) {
+  //       'use server'
+  //       // event.preventDefault();
+
+  //       const file = formData.get('featuredImage') as File;
+  //       const title = formData.get('title');
+  //       const content = formData.get('content');
+  //       const published = formData.get('published') === null ? false : true;
+  //       const grouperId = formData.get('grouperId');
+  //       const arrayBuffer = await file.arrayBuffer();
+  //       const buffer = new Uint8Array(arrayBuffer);
+  //   await new Promise((resolve, reject) => {
+  //     cloudinary.uploader.upload_stream({
+  //       tags: ['category']
+  //     }, function (error, result) {
+  //       if (error) {
+  //         reject(error);
+  //         return;
+  //       }
+  //       resolve(result);
+       
+  //       const data = {title, content, published, result, grouperId }
+  //       createCategoryAction(data);
+        
+  //     })
+  //     .end(buffer);
+  //   });
+
+      
+  //   };
+
+  //   // const handleChange = (event) => {
+  //   //   setPublished(event.target.checked);
+  //   // }
 
   return (
     <div className="lg:p-8">
@@ -104,7 +139,7 @@ const CategoryForm = async () => {
           className="input input-bordered sm:max-w-sm"
           name="title"
           id="title"
-          // onChange={(e) => setTitle(e.target.value)}
+          onChange={(e) => setTitle(e.target.value)}
         />
       </div>
     </CardContent>
@@ -116,7 +151,7 @@ const CategoryForm = async () => {
         <Textarea name="content" id="content" 
         //  value="I really enjoyed biking yesterday!"
         className="input input-bordered sm:max-w-sm"
-        // onChange={(e) =>setContent(e.target.value)} 
+        onChange={(e) =>setContent(e.target.value)} 
         />
       </div>
       </CardContent>
@@ -140,7 +175,7 @@ const CategoryForm = async () => {
           type="checkbox"
           name="published"
           id="published"
-          // onChange={handleChange}
+          onChange={handleChange}
         />
       <label
         htmlFor="published"
@@ -159,11 +194,11 @@ const CategoryForm = async () => {
       className="peer h-full w-full rounded border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-red-500 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
       name="grouperId"
       id="grouperId"      
-      // value={grouperId} 
-      // onChange={(event) => setGrouperId(event.target.value)}
+      value={grouperId} 
+      onChange={(event) => setGrouperId(event.target.value)}
       >
 
-        {users.map((option:any, index:any) => (
+        {users.map((option, index) => (
           <option key={index} value={option.id}>{option.name}</option>
         ))}
       </select>
