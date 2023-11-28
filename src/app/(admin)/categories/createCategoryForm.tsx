@@ -18,10 +18,10 @@ import { redirect } from 'next/navigation'
 import cloudinary from '@/lib/cloudinary';
 import { createCategoryAction } from "../../actions/categoriescrud";
 
-const getPostCategory = async () => {
+const getCategoryUsers = async () => {
   try {
   const res = await axios.get(
-      `https://www.phoenixcreedacademy/api/users` 
+      `https://www.phoenixcreedacademy.com/api/users` 
   );
   // setUsers(res.data.users);
   // console.log(res.data.users);
@@ -34,7 +34,7 @@ const getPostCategory = async () => {
 
 const CategoryForm = async () => {
 
-  const  users = await getPostCategory();
+  const  users = await getCategoryUsers();
   // const router = useRouter();
   
   // const [title, setTitle] = useState('');
