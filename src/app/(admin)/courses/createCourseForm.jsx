@@ -160,7 +160,7 @@ const CourseForm =  () => {
       name="authorId"
       id="authorId"      
       value={authorId} 
-      onChange={(event) => setAuthourId(event.target.value)}
+      onChange={(event) => setAuthorId(event.target.value)}
       >
 
         {users.map((option, index) => (
