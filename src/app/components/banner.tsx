@@ -4,12 +4,12 @@ export default function Banner() {
  
 
   return (
-    <div className="bg-black" style={{ 
+    <div className="bg-black h-2/3" style={{ 
         backgroundImage: `url(/images/banner.jpeg)`, 
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-        height: '720px',
+        height: '520px',
        }} 
         >
         
