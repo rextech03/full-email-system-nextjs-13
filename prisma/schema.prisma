@@ -17,8 +17,8 @@ model Post {
   title     String   @db.VarChar(255)
   content   String?
   published Boolean  @default(false)
-  featuredImage String?
-  courseVideo String?
+  featuredImage String? @default("https://res.cloudinary.com/dqojz5vft/image/upload/v1701209516/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs_chxbh2.jpg")
+  courseVideo String? @default("https://res.cloudinary.com/dqojz5vft/image/upload/v1701209516/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs_chxbh2.jpg")
   finalCourse Boolean? @default(false)
 
   createdAt DateTime @default(now())
@@ -42,7 +42,7 @@ model Category {
   title     String   @db.VarChar(255)
   content   String?
   published Boolean  @default(false)
-  featuredImage String?
+  featuredImage String? @default("https://res.cloudinary.com/dqojz5vft/image/upload/v1701209516/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs_chxbh2.jpg")
   
 
   createdAt DateTime @default(now())
