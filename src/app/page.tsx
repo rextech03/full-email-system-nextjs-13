@@ -34,11 +34,11 @@ export default function Home() {
     <>
       <Banner />
 
-    <div className="mx-auto bg-white p-12">
-
+      <div className="  h-full bg-gray-200 w-full flex justify-center items-center">
+            
       {/* <h2 className="text-black text-3xl text-center py-4 font-bold">Online Courses</h2> */}
       
-      <div className=" md:flex justify-items-center  md:space-x-6">
+      <div className="w-5/6 my-4 flex justify-between">
       {cardContent.map((item, idx) => (
       
         <Card key={idx} imageAlt={item.imageAlt} imagePath={item.imagePath} title={item.title} description={item.description} buttonText={item.buttonText} path={item.path} />
