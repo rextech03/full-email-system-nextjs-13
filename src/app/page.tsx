@@ -10,7 +10,8 @@ export default function Home() {
       title: "Forex Mastery Course", 
       description: "Learn high technical analysis skills that would enable you extract money from the market with Confidence.", 
       buttonText: "Enroll",
-      path: "https://paystack.com/pay/accesscourses" 
+      path: "https://paystack.com/pay/accesscourses", 
+      amount: "N350,000.00"
     },
     {
       imagePath: "/images/chart.jpg",
@@ -18,7 +19,8 @@ export default function Home() {
       title: "PCA NoteBook", 
       description: `Purchase our PCA notebook so as to understand in details what’s you’ve been taught and also widen your knowledge in the forex market.`, 
       buttonText: "Buy Now",
-      path: "https://paystack.com/pay/materialsaccess" 
+      path: "https://paystack.com/pay/materialsaccess", 
+      amount: "N100,000.00"
   },
   {
     imagePath: "/images/chart.jpg",
@@ -26,7 +28,8 @@ export default function Home() {
     title: "Private Mentorship", 
     description: "Get the chance to learn with Phoenix privately in his daily session this will best help you concentrate more and tune up your skill in no time.", 
     buttonText: "Enroll",
-    path: "https://paystack.com/pay/vipsection" 
+    path: "https://paystack.com/pay/vipsection",
+    amount: "N500,000.00"
 },
   ]
 
@@ -41,7 +44,15 @@ export default function Home() {
       <div className="w-5/6 my-4 flex justify-between">
       {cardContent.map((item, idx) => (
       
-        <Card key={idx} imageAlt={item.imageAlt} imagePath={item.imagePath} title={item.title} description={item.description} buttonText={item.buttonText} path={item.path} />
+        <Card 
+        key={idx} 
+        imageAlt={item.imageAlt} 
+        imagePath={item.imagePath} 
+        title={item.title} 
+        description={item.description} 
+        buttonText={item.buttonText} 
+        path={item.path} 
+        amount={item.amount} />
       ))}
     </div>
     
