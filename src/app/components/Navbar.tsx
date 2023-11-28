@@ -14,7 +14,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { FaArrowDown } from "react-icons/fa";
+import { FaArrowDown, FaAlignJustify } from "react-icons/fa";
 
 const Navbar = () => {
     const { data: session, status } = useSession()
@@ -40,7 +40,7 @@ const Navbar = () => {
                 className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
                 onClick={() => setState(!state)}
               >
-                {/* <Menu /> */}
+                <FaAlignJustify />
               </button>
             </div>
           </div>

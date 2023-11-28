@@ -12,7 +12,7 @@ export default function Home({ params }: { params: { courseId: string } }) {
      
       
       <div className="bg-white/30 p-12 shadow-xl ring-1 ring-gray-900/5 rounded-lg backdrop-blur-lg max-w-xl mx-auto w-full">
-        <Uploader categoryId={id} />
+        <Uploader courseId={id} />
       </div>
       
       <div className="sm:absolute sm:bottom-0 w-full px-20 py-10 flex justify-between">
