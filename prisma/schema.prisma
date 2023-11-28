@@ -30,7 +30,7 @@ model Post {
   section    Category     @relation(fields: [sectionId], references: [id])
   sectionId  String
 
-  
+  // user CompletedPost[]
 
    @@index([authorId])
    @@index([sectionId])
@@ -77,5 +77,18 @@ model User {
 
   category   Category[]
 
+  // post CompletedPost[]
+
 }
 
+
+// model CompletedPost {
+//   post       Post     @relation(fields: [postId], references: [id])
+//   postId     String // relation scalar field (used in the `@relation` attribute above)
+//   user   User @relation(fields: [userId], references: [id])
+//   userId String // relation scalar field (used in the `@relation` attribute above)
+//   assignedAt DateTime @default(now())
+//   assignedBy String
+
+//   @@id([postId, userId])
+// }

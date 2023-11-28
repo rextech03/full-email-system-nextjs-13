@@ -82,17 +82,29 @@ export const getPost = async (id: string) => {
 
 export const getCategoryPost = async (id: string | undefined) => {
   try {
-    const post = await prisma.post.findMany({
-      where: {
-        sectionId: id, 
+    const [post, count] = await prisma.$transaction([
+      prisma.post.findMany( {
+        where: {
+          sectionId: id, 
+        },
+        include: {
+          section: {},
+          author: {}
+        },
+      }),
+    prisma.post.count({ where: {
+      sectionId: id, 
+    }, })
+    ])
+    
+    
+    // console.log(count);
+    return { 
+      pagination: {
+        total: count
       },
-      include: {
-        section: {},
-        author: {}
-      },
-    });
-    // console.log(post);
-    return { post };
+      data: post
+    };
   } catch (error) {
     return { error };
   }
