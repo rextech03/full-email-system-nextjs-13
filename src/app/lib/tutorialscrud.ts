@@ -6,7 +6,7 @@ type postData = {
   title: string;
   content: string | null;
   published: boolean;
-  featuredImage: string | null;
+  featuredImage: string ;
   // courseVideo: string| null;
   finalCourse: boolean| null;
   authorId: string;
@@ -67,6 +67,24 @@ export const getPost = async (id: string) => {
     const post = await prisma.post.findUnique({
       where: {
         id,
+      },
+      include: {
+        section: {},
+        author: {}
+      },
+    });
+    // console.log(post);
+    return { post };
+  } catch (error) {
+    return { error };
+  }
+};
+
+export const getCategoryPost = async (id: string | undefined) => {
+  try {
+    const post = await prisma.post.findMany({
+      where: {
+        sectionId: id, 
       },
       include: {
         section: {},

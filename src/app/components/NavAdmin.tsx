@@ -53,7 +53,7 @@ const NavAdmin = () => {
             {session && session.user?.email ? (
                     <>  
                     <Link href='/dashboard'>Dashboard</Link>
-                    <Link href=''>Onboarding</Link>
+                    <Link href='/onboarding'>Onboarding</Link>
                     <Link href=''>Welcome</Link>
                     <a href="https://paystack.com/pay/materialsaccess">Note Book</a>
                     <Link href='/tutorial'>Courses</Link>
