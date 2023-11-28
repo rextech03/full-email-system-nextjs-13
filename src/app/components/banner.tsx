@@ -9,14 +9,14 @@ export default function Banner() {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-        height: '520px',
+        height: '720px',
        }} 
         >
         
   
-        <div className="isolate px-6 py-14 lg:px-8">
+        <div className=" h-full w-full grid place-items-center">
           
-          <div className="mx-auto max-w-5xl py-12 sm:py-8 lg:py-2 bg-opacity-75 px-16  rounded bg-white">
+          <div className="m-auto max-w-5xl py-12 sm:py-8 lg:py-2 bg-opacity-75 px-16  rounded bg-white">
             
             <div className="text-center">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
