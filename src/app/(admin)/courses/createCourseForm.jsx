@@ -14,8 +14,8 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import axios from "axios";
 // import { useRouter } from "next/navigation";
-import { redirect } from 'next/navigation'
-import cloudinary from '@/lib/cloudinary';
+// import { redirect } from 'next/navigation'
+// import cloudinary from '@/lib/cloudinary';
 import { createPostAction } from "../../actions/tutorialscrud";
 
 // const getUsers = async () => {
@@ -116,15 +116,17 @@ const CourseForm = async () => {
           event.preventDefault();
   
         try {
-          const response =  fetch('https://www.phoenixcreedacademy.com/api/courses', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ title, content, published, grouperId, authorId, final }),
-          });
-          const { message } =  response.json();
-          alert(message);
+          const data = { title, content, published, grouperId, authorId, final };
+          createPostAction(data);
+          // const response =  fetch('https://www.phoenixcreedacademy.com/api/courses', {
+          //   method: 'POST',
+          //   headers: {
+          //     'Content-Type': 'application/json',
+          //   },
+          //   body: JSON.stringify({ title, content, published, grouperId, authorId, final }),
+          // });
+          // const { message } =  response.json();
+          // alert(message);
         } catch (error) {
           console.error(error);
         }

@@ -14,8 +14,8 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import axios from "axios";
 // import { useRouter } from "next/navigation";
-import { redirect } from 'next/navigation'
-import cloudinary from '@/lib/cloudinary';
+// import { redirect } from 'next/navigation'
+// import cloudinary from '@/lib/cloudinary';
 import { createCategoryAction } from "../../actions/categoriescrud";
 
 // const getCategoryUsers = async () => {
@@ -60,19 +60,9 @@ const CategoryForm =  () => {
       const handleSubmit = (event) => {
         event.preventDefault();
 
-      try {
-        const response =  fetch('https://www.phoenixcreedacademy.com/api/categories', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({categoryId, title, content, published, grouperId }),
-        });
-        // const { message } =  res.JSON()
-        // alert(message);
-      } catch (error) {
-        console.error(error);
-      }
+        const data = {categoryId, title, content, published, grouperId }
+        createCategoryAction(data)
+ 
     };
 
     const handleChange = (event) => {
