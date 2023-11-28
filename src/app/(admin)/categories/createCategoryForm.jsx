@@ -62,7 +62,7 @@ const CategoryForm =  () => {
 
       try {
         const response =  fetch('https://www.phoenixcreedacademy.com/api/categories', {
-          method: 'PUT',
+          method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
@@ -118,7 +118,7 @@ const CategoryForm =  () => {
   return (
     <div className="lg:p-8">
           <div className="mx-auto flex w-full flex-col justify-center space-y-6 lg:max-w-lg"></div>
-    <form action={create} >
+    <form onSubmit={handleSubmit} >
       
       <Card>
               <CardHeader className="space-y-1">
