@@ -13,91 +13,23 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import axios from "axios";
-// import { useRouter } from "next/navigation";
-// import { redirect } from 'next/navigation'
-// import cloudinary from '@/lib/cloudinary';
 import { createPostAction } from "../../actions/tutorialscrud";
 
-// const getUsers = async () => {
-//   try {
-//   const res = await axios.get(
-//       `https://www.phoenixcreedacademy.com/api/users` 
-//   );
-//   // setUsers(res.data.users);
-//   // console.log(res.data.users);
-//   const users = res.data.users;
-//     return users;
-//   } catch (error) {
-//       console.log(error);
-//   }
-// };
 
-// const getCategories = async () => {
-//   try {
-//   const res = await axios.get(
-//       `https://www.phoenixcreedacademy.com/api/categories` 
-//   );
-//   // setUsers(res.data.users);
-//   // console.log(res.data.users);
-//   const categories = res.data.categories;
-//     return categories;
-//   } catch (error) {
-//       console.log(error);
-//   }
-// };
 
 const CourseForm = async () => {
 
-  // const  users = await getUsers();
-  // const  categories = await getCategories();
-  
-  // async function create(formData: FormData) {
-  //       'use server'
-  //       // event.preventDefault();
-
-  //       const file = formData.get('featuredImage') as File;
-  //       const title = formData.get('title');
-  //       const content = formData.get('content');
-  //       const published = formData.get('published') === null ? false : true;
-  //       const finalCourse = formData.get('finalCourse') === null ? false : true;
-  //       const sectionId = formData.get('sectionId');
-  //       const authorId = formData.get('authorId');
-  //       const arrayBuffer = await file.arrayBuffer();
-  //       const buffer = new Uint8Array(arrayBuffer);
-       
-  //   await new Promise((resolve, reject) => {
-  //     cloudinary.uploader.upload_stream({
-  //       tags: ['category']
-  //     }, function (error, result) {
-  //       if (error) {
-  //         reject(error);
-  //         return;
-  //       }
-  //       resolve(result);
-       
-  //       const data = {title, content, published, result, sectionId, authorId, finalCourse }
-  //       createPostAction(data);
-        
-  //     })
-  //     .end(buffer);
-  //   });
-
-      
-  //   };
-
-    // const handleChange = (event) => {
-    //   setPublished(event.target.checked);
-    // }
+ 
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [published, setPublished] = useState(false);
     const [final, setFinal] = useState(false);
     const [grouperId, setGrouperId] = useState('');
     const [authorId, setAuthorId] = useState('');
-    const [message, setMessage] = useState('')
     const [users, setUsers] = useState([]);
+    const [categories, setCategories] = useState([]);
   
-    const getPostCategory = async () => {
+    const getPostUsers = async () => {
       try {
       const res = await axios.get(
           `https://www.phoenixcreedacademy.com/api/users` 
@@ -107,9 +39,21 @@ const CourseForm = async () => {
           console.log(error);
       }
   };
+
+  const getPostCategories = async () => {
+    try {
+    const res = await axios.get(
+        `https://www.phoenixcreedacademy.com/api/categories` 
+    );
+    setCategories(res.data.categories);
+    } catch (error) {
+        console.log(error);
+    }
+};
     
       useEffect(() => {
-        getPostCategory();
+        getPostUsers();
+        getPostCategories();
       }, []);
     
         const handleSubmit = (event) => {
@@ -118,15 +62,7 @@ const CourseForm = async () => {
         try {
           const data = { title, content, published, grouperId, authorId, final };
           createPostAction(data);
-          // const response =  fetch('https://www.phoenixcreedacademy.com/api/courses', {
-          //   method: 'POST',
-          //   headers: {
-          //     'Content-Type': 'application/json',
-          //   },
-          //   body: JSON.stringify({ title, content, published, grouperId, authorId, final }),
-          // });
-          // const { message } =  response.json();
-          // alert(message);
+         
         } catch (error) {
           console.error(error);
         }

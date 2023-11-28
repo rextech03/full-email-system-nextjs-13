@@ -5,7 +5,7 @@ type categoryData = {
   title: string;
   content: string | null;
   published: boolean;
-  featuredImage: string | null;
+  // featuredImage: string | null;
   grouperId: string;
   }
 

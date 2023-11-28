@@ -13,24 +13,8 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import axios from "axios";
-// import { useRouter } from "next/navigation";
-// import { redirect } from 'next/navigation'
-// import cloudinary from '@/lib/cloudinary';
 import { createCategoryAction } from "../../actions/categoriescrud";
 
-// const getCategoryUsers = async () => {
-//   try {
-//   const res = await axios.get(
-//       `https://www.phoenixcreedacademy.com/api/users` 
-//   );
-//   // setUsers(res.data.users);
-//   // console.log(res.data.users);
-//   const users = res.data.users;
-//     return users;
-//   } catch (error) {
-//       console.log(error);
-//   }
-// };
 
 const CategoryForm =  () => {
 
@@ -68,42 +52,6 @@ const CategoryForm =  () => {
     const handleChange = (event) => {
       setPublished(event.target.checked);
     }
-
-
-  // async function create(formData: FormData) {
-  //       'use server'
-  //       // event.preventDefault();
-
-  //       const file = formData.get('featuredImage') as File;
-  //       const title = formData.get('title');
-  //       const content = formData.get('content');
-  //       const published = formData.get('published') === null ? false : true;
-  //       const grouperId = formData.get('grouperId');
-  //       const arrayBuffer = await file.arrayBuffer();
-  //       const buffer = new Uint8Array(arrayBuffer);
-  //   await new Promise((resolve, reject) => {
-  //     cloudinary.uploader.upload_stream({
-  //       tags: ['category']
-  //     }, function (error, result) {
-  //       if (error) {
-  //         reject(error);
-  //         return;
-  //       }
-  //       resolve(result);
-       
-  //       const data = {title, content, published, result, grouperId }
-  //       createCategoryAction(data);
-        
-  //     })
-  //     .end(buffer);
-  //   });
-
-      
-  //   };
-
-  //   // const handleChange = (event) => {
-  //   //   setPublished(event.target.checked);
-  //   // }
 
   return (
     <div className="lg:p-8">

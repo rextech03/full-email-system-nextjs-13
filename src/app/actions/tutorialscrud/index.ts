@@ -11,7 +11,7 @@ export async function createPostAction(data: any) {
       title: data.title,
       content: data.content,
       published: data.published,
-      featuredImage: data.result.secure_url,
+      // featuredImage: data.result.secure_url,
       authorId: data.authorId,
       sectionId: data.sectionId,
       // courseVideo: data.courseVideo,

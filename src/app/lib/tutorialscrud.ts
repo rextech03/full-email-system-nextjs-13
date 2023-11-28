@@ -6,7 +6,7 @@ type postData = {
   title: string;
   content: string | null;
   published: boolean;
-  featuredImage: string ;
+  // featuredImage: string ;
   // courseVideo: string| null;
   finalCourse: boolean| null;
   authorId: string;
@@ -18,7 +18,7 @@ type postData = {
     title: string;
     content: string | null;
     published: boolean;
-    featuredImage: string | null;
+    // featuredImage: string | null;
     finalCourse: boolean| null;
     authorId: string;
   }
