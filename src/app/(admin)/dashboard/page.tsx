@@ -16,7 +16,7 @@ export  default async function page() {
     <div className="py-4 mx-5" > 
     <h4 className="text-2xl my-4 text-white font-weight-bold">Latest Content</h4>
 
-    <div className="flex gap-4 align-items-start">
+    <div className="flex gap-4 w-full">
     {tutorials?.slice(0, 4).map((tutorial) => (
     <div key={tutorial.id}>
       {tutorial.featuredImage && tutorial.content !== null ?
@@ -28,7 +28,7 @@ export  default async function page() {
 </div>
 </div>
 
-<div className="container  py-2 bg-gray-400">
+<div className="px-8  py-2 bg-gray-400">
     <h4 className="text-3xl my-4 text-black font-bold">Lessons</h4>
     <div className="flex flex-wrap gap-4 min-h-screen w-full  ">
      

@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Banner from "../app/components/banner";
 import Card from "../app/components/card";
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 
 export default function Home() {
   const cardContent = [
@@ -35,13 +37,14 @@ export default function Home() {
 
   return (
     <>
+     <Navbar />
       <Banner />
 
       <div className="  h-full bg-gray-200 w-full flex justify-center items-center">
             
       {/* <h2 className="text-black text-3xl text-center py-4 font-bold">Online Courses</h2> */}
       
-      <div className="w-5/6 my-4 flex justify-between">
+      <div className=" w-full md:w-5/6 my-4 md:flex justify-between">
       {cardContent.map((item, idx) => (
       
         <Card 
@@ -57,7 +60,7 @@ export default function Home() {
     </div>
     
     </div>
-    
+    <Footer />
     </>
   )
 }

@@ -13,7 +13,7 @@ interface Props {
 export default function Card( props: Props ) {
   
   return (
-    <div className="w-1/4 rounded overflow-hidden shadow-lg">
+    <div className=" p-4 w-full md:w-1/4 rounded overflow-hidden shadow-lg">
     <Image className="w-full" src={props.imagePath} alt={props.imageAlt} width={125} height={125} />
     <div className="px-6 py-4">
       <div className="font-bold text-xl mb-2">{props.title}</div>

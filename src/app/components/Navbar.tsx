@@ -29,10 +29,10 @@ const Navbar = () => {
 
     return (
         <nav className="bg-gray-300 w-full border-b md:border-0 max-w-screen">
-        <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:justify-between md:px-8">
+        <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:justify-between md:px-8 xl:px-1">
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link href="/">
-              <Image src="/images/logo.png" alt="logo" width={120} height={120} className="h-6 w-6" />
+              <Image src="/images/logo.png" alt="logo" width={180} height={180} className="h-12 w-12" />
             </Link>
             <div className="md:hidden">
               

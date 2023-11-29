@@ -32,7 +32,7 @@ const NavAdmin = () => {
         <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:justify-between md:px-8">
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link href="/dashboard">
-              <Image src="/images/logo.png" alt="logo" width={120} height={120} className="h-6 w-6" />
+              <Image src="/images/logo.png" alt="logo" width={240} height={180} className="h-12 w-12" />
             </Link>
             <div className="md:hidden">
               
@@ -67,7 +67,32 @@ const NavAdmin = () => {
                       </DropdownMenuContent>
                     </DropdownMenu>
 
-                    <DropdownMenu>
+                    {/* <DropdownMenu>
+                      <DropdownMenuTrigger> <div className="flex bg-gray-200 justify-items-center items-center  rounded p-2 "><p className='pr-2'>{session.user?.name}</p><FaArrowDown  /></div></DropdownMenuTrigger>
+                      <DropdownMenuContent>
+                        <DropdownMenuLabel><Link href="/user/profile">Profile</Link></DropdownMenuLabel>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuLabel><Link href='/auth/signout'>Sign out</Link></DropdownMenuLabel>
+                      </DropdownMenuContent>
+                    </DropdownMenu> */}
+
+                    </>
+                ) : (
+                <>
+                {/* {menus.map((item, idx) => (
+                <li key={idx} className="text-gray-600 hover:text-white hover:bg-blue-600 hover:py-2 hover:px-4 hover:rounded">
+                  <Link href={item.path}>{item.title}</Link>
+                </li>
+                ))} */}
+              </>
+              )}
+            </ul>
+          </div>
+          <div>
+          <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+            {session && session.user?.email ? (
+                    <>  
+          <DropdownMenu>
                       <DropdownMenuTrigger> <div className="flex bg-gray-200 justify-items-center items-center  rounded p-2 "><p className='pr-2'>{session.user?.name}</p><FaArrowDown  /></div></DropdownMenuTrigger>
                       <DropdownMenuContent>
                         <DropdownMenuLabel><Link href="/user/profile">Profile</Link></DropdownMenuLabel>
