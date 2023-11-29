@@ -16,13 +16,13 @@ export default function Banner() {
   
         <div className=" h-[34rem] w-full grid place-items-center xl:h-[72rem]">
           
-          <div className="m-auto max-w-5xl py-12 sm:py-8 lg:py-2 bg-opacity-75 px-16  rounded bg-white">
+          <div className="m-auto max-w-5xl py-12 sm:py-8 lg:py-2 px-16  rounded bg-transparent">
             
-            <div className="text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+            <div className="text-center text-white ">
+              <h1 className="text-4xl font-bold tracking-tight  sm:text-6xl">
                 Phoenix Creed Academy
               </h1>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
+              <p className="mt-6 text-lg leading-8 font-semibold">
               Welcome to Phoenix creed academy
               where you get the best knowledge to make money online
               by exhibiting a pro founded Technical analysis skills
