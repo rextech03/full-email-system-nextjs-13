@@ -1,14 +1,13 @@
 import Link from "next/link";
-
-// import Avatar from "../components/Avatar";
+import Image from "next/image"
 import { getUsers } from "../../../../src/app/lib/usercrud";
 import DeleteUser from "../users/[userId]/deleteUser";
-import Image from "next/image"
+
 
 
 const UserList = async () => {
   const { users } = await getUsers();
-  // console.log(users);
+  console.log(users);
   let counter = 1
   return (
 
@@ -99,7 +98,7 @@ const UserList = async () => {
                     <Link href={`/users/${user.id}`}  className="text-indigo-600 hover:text-indigo-900">
                       Edit
                     </Link>
-                    <DeleteUser id={tutorial.id} />
+                    <DeleteUser id={user.id} />
                   </td>
                 </tr>
               ))}
