@@ -92,7 +92,7 @@ const CategoryList = async () => {
               className="h-10 w-10 rounded"
               />
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex justify-items-center items-center">
+                  <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex justify-items-center items-center gap-4">
                     <Link href={`/categories/${category.id}`}  className="text-indigo-600 hover:text-indigo-900">
                       Edit
                     </Link>
