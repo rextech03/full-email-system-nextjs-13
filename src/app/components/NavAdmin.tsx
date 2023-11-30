@@ -96,6 +96,8 @@ const NavAdmin = () => {
                       <DropdownMenuTrigger> <div className="flex bg-gray-200 justify-items-center items-center  rounded p-2 "><p className='pr-2'>{session.user?.name}</p><FaArrowDown  /></div></DropdownMenuTrigger>
                       <DropdownMenuContent>
                         <DropdownMenuLabel><Link href="/user/profile">Profile</Link></DropdownMenuLabel>
+                        <DropdownMenuLabel><Link href='/user/profile'>Profile</Link></DropdownMenuLabel>
+                        <DropdownMenuLabel><Link href='/user/profilePhoto'>Edit Profile Photo</Link></DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuLabel><Link href='/auth/signout'>Sign out</Link></DropdownMenuLabel>
                       </DropdownMenuContent>
