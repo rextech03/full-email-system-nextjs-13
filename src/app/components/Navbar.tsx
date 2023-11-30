@@ -57,6 +57,8 @@ const Navbar = () => {
                       <DropdownMenuContent>
                         <DropdownMenuLabel><Link href='/dashboard'>Dashboard</Link></DropdownMenuLabel>
                         <DropdownMenuSeparator />
+                        <DropdownMenuLabel><Link href='/user/profile'>Profile</Link></DropdownMenuLabel>
+                        <DropdownMenuLabel><Link href='/user/profilePhoto'>Edit Profile Photo</Link></DropdownMenuLabel>
                         <DropdownMenuLabel><Link href='/auth/signout'>Sign out</Link></DropdownMenuLabel>
                       </DropdownMenuContent>
                     </DropdownMenu>
