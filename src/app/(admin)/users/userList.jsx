@@ -3,6 +3,7 @@ import Link from "next/link";
 // import Avatar from "../components/Avatar";
 import { getUsers } from "../../../../src/app/lib/usercrud";
 import DeleteUser from "../users/[userId]/deleteUser";
+import Image from "next/image"
 
 
 const UserList = async () => {
@@ -98,7 +99,7 @@ const UserList = async () => {
                     <Link href={`/users/${user.id}`}  className="text-indigo-600 hover:text-indigo-900">
                       Edit
                     </Link>
-                    <DeleteCategory id={tutorial.id} />
+                    <DeleteUser id={tutorial.id} />
                   </td>
                 </tr>
               ))}

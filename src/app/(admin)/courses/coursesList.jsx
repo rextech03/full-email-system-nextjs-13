@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image"
 import { getPosts } from "../../lib/tutorialscrud";
-import Deletetutorial from "./[courseId]/deleteTutorial";
+import DeleteTutorial from "./[courseId]/deleteTutorial";
 
       
 const CoursesList = async () => {
@@ -95,7 +95,7 @@ const CoursesList = async () => {
                     <Link href={`/courses/${tutorial.id}`}  className="text-indigo-600 hover:text-indigo-900">
                       Edit
                     </Link>
-                    <DeleteCategory id={tutorial.id} />
+                    <DeleteTutorial id={tutorial.id} />
                   </td>
                 </tr>
               ))}
