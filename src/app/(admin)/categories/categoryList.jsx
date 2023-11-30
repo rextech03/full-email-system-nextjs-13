@@ -83,6 +83,7 @@ const CategoryList = async () => {
               src={category.featuredImage}
               width={125}
               height={125}
+              className="h-10 w-10 rounded-full"
               />
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex justify-items-center items-center">
