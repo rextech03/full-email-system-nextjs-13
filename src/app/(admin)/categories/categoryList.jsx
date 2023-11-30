@@ -11,7 +11,7 @@ const CategoryList = async () => {
   console.log(categories);
   let counter = 1
   return (
-
+<div className="grid place-items-center min-h-screen">
     <div className="flex flex-col">
     <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
       <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -89,7 +89,7 @@ const CategoryList = async () => {
               src={category.featuredImage}
               width={125}
               height={125}
-              className="h-10 w-10 rounded-full"
+              className="h-10 w-10 rounded"
               />
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex justify-items-center items-center">
@@ -106,63 +106,8 @@ const CategoryList = async () => {
       </div>
     </div>
   </div>
+  </div>
 
-
-//     <div className="grid place-items-center min-h-screen">
-//      <table className="table-auto  divide-y divide-gray-200 dark:divide-gray-700 w-1/2">
-//    <thead>
-//      <tr>
-//        <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Id</th>
-//       <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Name</th>
-//        <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Email</th>
-//        <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Published</th>
-//        <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Featured Image</th>
-//        <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Actions</th>
-//      </tr>
-//    </thead>
-//    <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-    
-//      {categories?.map((category) => (
-//         <tr key={category.id} className="">
-//           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200"><p className="pr-4">{counter++}</p> </td>
-//           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
-//             <Link href={`/categories/${category.id}`} className="">
-//             <span className="ml-2">{category.title }</span>
-//           </Link>
-//           </td>
-//           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
-//             <Link href={`/categories/${category.id}`} className="flex ">
-//             <span className="ml-2">{category.content}</span>
-//           </Link>
-//           </td>
-//           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
-//             <Link href={`/categories/${category.id}`} className="flex ">
-//             <span className="ml-2">{category.published ?
-//            <p>Published</p> 
-//           : <p>UnPublished</p>}</span>
-//           </Link>
-//           </td>
-//           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
-//             <Link href={`/categories/${category.id}`} className="flex ">
-//             <span className="ml-2">
-//               <Image 
-//               alt="featured Image" 
-//               src={category.featuredImage}
-//               width={125}
-//               height={125}
-//               />
-//               </span>
-//           </Link>
-//           </td>
-//           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
-//             <DeleteCategory id={category.id} /></td>
-//         </tr>
-//       ))}
-    
-   
-//   </tbody>
-// </table>
-//    </div>
    
   
   );
