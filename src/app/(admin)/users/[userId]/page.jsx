@@ -23,6 +23,11 @@ const User = async ({ params }) => {
         <Link href={`/users/${userId}/edit`} className='py-2 px-4 bg-black text-white rounded'>
           Edit
         </Link>
+
+        <Link href={`/users/profilePhoto/${userId}`} className='py-2 px-4 bg-black text-white rounded'>
+          Edit Profile Photo
+        </Link>
+
         <DeleteUser id={userId} />
         </div>
       </div>

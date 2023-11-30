@@ -50,7 +50,7 @@ const CategoryList = async () => {
                   Featured Image
                 </th>
                 <th scope="col" className="relative px-6 py-3">
-                  <span className="sr-only">Edit</span>
+                  <span className="sr-only">Actions</span>
                 </th>
               </tr>
             </thead>

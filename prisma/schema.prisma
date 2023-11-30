@@ -62,7 +62,7 @@ model User {
   name         String?
   email        String? @unique
   passwordHash String?
-  profileImage String?
+  profileImage String?  @default("https://res.cloudinary.com/dqojz5vft/image/upload/v1701209516/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs_chxbh2.jpg")
 
   resetPasswordToken String? @unique
   resetPasswordTokenExpiry DateTime?

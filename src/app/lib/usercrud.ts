@@ -12,6 +12,11 @@ type userData = {
     email: string;
     // passwordHash: string
   }
+
+  type uploadData = {
+    id: string,
+    profileImage: string | null;
+  }
   
 export const getUsers = async () => {
   try {
@@ -57,6 +62,15 @@ export const deleteUser = async (id:string) => {
   try {
     await prisma.user.delete({ where: { id } });
     return redirect("/users");
+  } catch (error) {
+    return { error };
+  }
+};
+
+export const uploadImage = async ( uploadData:uploadData) => {
+  try {
+    await prisma.user.update({ where: { id: uploadData.id }, data: uploadData });
+    return { user: uploadData };
   } catch (error) {
     return { error };
   }

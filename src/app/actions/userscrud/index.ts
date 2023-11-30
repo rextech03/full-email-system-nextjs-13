@@ -1,6 +1,6 @@
 "use server";
 
-import { createUser, deleteUser, updateUser } from "../../lib/usercrud";
+import { uploadImage, createUser, deleteUser, updateUser } from "../../lib/usercrud";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import bcrypt from 'bcryptjs';
@@ -52,4 +52,22 @@ export async function deleteUserAction(id:string) {
   await deleteUser(id);
   revalidatePath("/users");
   redirect("/users");
+}
+
+export async function uploadImageAction( data: any ) {
+  try {
+    const id = data.categoryId;
+    const postData = {
+      id : data.categoryId,
+      profileImage: data.result.secure_url, 
+    };
+   console.log(postData);
+    const { user, error } = await uploadImage( postData);
+    if (error) throw error;
+    revalidatePath("/users");
+    revalidatePath(`/users/${data.id}`);
+    return { status: "ok", message: "User Profile Photo created with success", user };
+  } catch (error) {
+    return { status: "nok", message: "Failed to update User Profile Photo." };
+  }
 }
