@@ -16,7 +16,19 @@ export  default async function page() {
     <div className="py-4 mx-5" > 
     <h4 className="text-2xl my-4 text-white font-weight-bold">Latest Content</h4>
 
-    <div className="flex gap-4 w-full">
+    <div className="flex flex-wrap gap-4 min-h-screen w-full  ">
+     
+     {tutorials?.slice(0, 4).map((tutorial) => (
+     <div key={tutorial.id}>
+       {tutorial.featuredImage && tutorial.content !== null ?
+       <AdminCard key={tutorial.id} imageAlt={tutorial.title} imagePath={tutorial.featuredImage} title={tutorial.title} description={tutorial?.content} buttonText={'View More'} path={`/tutorial/complete/${tutorial.id}`} />
+       : <></>}
+     </div>        
+   ))}
+  
+      
+     </div> 
+    {/* <div className="flex gap-4 w-full">
     {tutorials?.slice(0, 4).map((tutorial) => (
     <div key={tutorial.id}>
       {tutorial.featuredImage && tutorial.content !== null ?
@@ -24,7 +36,7 @@ export  default async function page() {
       : <></>}
     </div>        
   ))}
-</div>
+</div> */}
 </div>
 </div>
 
