@@ -55,9 +55,9 @@ const CategoryList = async () => {
                 >
                   Actions
                 </th>
-                <th scope="col" className="relative px-6 py-3">
+                {/* <th scope="col" className="relative px-6 py-3">
                   <span className="sr-only">Actions</span>
-                </th>
+                </th> */}
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">

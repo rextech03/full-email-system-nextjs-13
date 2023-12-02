@@ -32,7 +32,7 @@ async function Home({ categoryId }: { categoryId: string }) {
         // console.log(result);
 
         const data = {categoryId, result }
-        // console.log(result?.secure_url);
+        console.log(data);
        
         uploadImageAction(data);
         
