@@ -33,7 +33,21 @@ async function Home({ userId }: { userId: string }) {
         const data = {userId, result }
         // console.log(result?.secure_url);
        
-        uploadImageAction(data);
+        // uploadImageAction(data);
+        try {
+          const response =  fetch('https://www.phoenixcreedacademy.com/api/users/image', {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+          });
+          // const { message } =  response.
+          // alert(message);
+        } catch (error) {
+          console.error(error);
+        }
+
         
       })
       .end(buffer);

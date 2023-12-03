@@ -14,7 +14,7 @@ async function Home({ courseId }: { courseId: string }) {
 
   async function create(formData: FormData) {
     'use server'
-    const file = formData.get('image') as File;
+    const file = formData.get('video') as File;
     const id = formData.get(courseId);
     const arrayBuffer = await file.arrayBuffer();
     const buffer = new Uint8Array(arrayBuffer);
@@ -34,7 +34,21 @@ async function Home({ courseId }: { courseId: string }) {
         const data = {courseId, result }
         // console.log(result?.secure_url);
        
-        uploadVideoAction(data);
+        // uploadVideoAction(data);
+        try {
+          const response =  fetch('https://www.phoenixcreedacademy.com/api/courses/video', {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+          });
+          // const { message } =  response.
+          // alert(message);
+        } catch (error) {
+          console.error(error);
+        }
+
         
       })
       .end(buffer);
@@ -53,10 +67,10 @@ async function Home({ courseId }: { courseId: string }) {
             Select an Video to Upload
           </label>
           <input
-            id="image"
+            id="video"
             className="block w-full border-slate-400 rounded focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
             type="file"
-            name="image"
+            name="video"
             accept='.mp4, mv4'
             required
           />
