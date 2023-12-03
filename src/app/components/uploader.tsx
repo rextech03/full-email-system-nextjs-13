@@ -46,6 +46,7 @@ async function Home({ categoryId }: { categoryId: string }) {
   }
   return (
     <div>
+      <p>{categoryId}</p>
       <h2 className="text-xl font-bold mb-4">Add a New Image</h2>
       <form action={create} className="bg-white border border-slate-200 dark:border-slate-500 rounded p-6 mb-6">
         <div className="mb-6">
