@@ -39,12 +39,12 @@ const UserList = async () => {
                 >
                   Email
                 </th>
-                <th
+                {/* <th
                   scope="col"
                   className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                 >
                   Profile Photo
-                </th>
+                </th> */}
                 <th
                   scope="col"
                   className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
@@ -86,7 +86,7 @@ const UserList = async () => {
           : <p>Unverified</p>}
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {/* <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   <Image 
               alt="featured Image" 
               src={user.profileImage}
@@ -94,7 +94,7 @@ const UserList = async () => {
               height={125}
               className="h-10 w-10 rounded"
               />
-                  </td>
+                  </td> */}
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex justify-items-center items-center gap-4">
                     <Link href={`/users/${user.id}`}  className="text-indigo-600 hover:text-indigo-900">
                       Edit
