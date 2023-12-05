@@ -14,9 +14,12 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import axios from "axios";
 import { createCategoryAction } from "../../actions/categoriescrud";
-
+import { useRouter } from 'next/navigation'
+import { FaSpinner } from "react-icons/fa6";
 
 const CategoryForm =  () => {
+
+  const router = useRouter()
 
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -25,6 +28,7 @@ const CategoryForm =  () => {
   const [grouperId, setGrouperId] = useState('');
   const [message, setMessage] = useState('')
   const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const getCategoryUsers = async () => {
     try {
@@ -44,8 +48,10 @@ const CategoryForm =  () => {
       const handleSubmit = (event) => {
         event.preventDefault();
 
+        setIsLoading(true);
         const data = { title, content, published, grouperId }
         createCategoryAction(data)
+        router.push('/categories')
  
     };
 
@@ -78,6 +84,7 @@ const CategoryForm =  () => {
           name="title"
           id="title"
           onChange={(e) => setTitle(e.target.value)}
+          required
         />
       </div>
     </CardContent>
@@ -90,6 +97,7 @@ const CategoryForm =  () => {
         //  value="I really enjoyed biking yesterday!"
         className="input input-bordered sm:max-w-sm"
         onChange={(e) =>setContent(e.target.value)} 
+        required
         />
       </div>
       </CardContent>
@@ -114,6 +122,7 @@ const CategoryForm =  () => {
           name="published"
           id="published"
           onChange={handleChange}
+          
         />
       <label
         htmlFor="published"
@@ -133,6 +142,7 @@ const CategoryForm =  () => {
       name="grouperId"
       id="grouperId"      
       value={grouperId} 
+      required
       onChange={(event) => setGrouperId(event.target.value)}
       >
 
@@ -148,9 +158,14 @@ const CategoryForm =  () => {
         <Button
           className="w-full"
           type="submit"
+          aria-disabled={isLoading}
         >
-          Save
+          {isLoading ? <>
+            <FaSpinner className="animate-spin" /> &nbsp;
+            <p>Saving</p>
+          </> : "Save"}
         </Button>
+        
       </div>
       </CardFooter>
       <p aria-live="polite" className="sr-only">

@@ -2,7 +2,9 @@ import { revalidatePath } from 'next/cache';
 import cloudinary from '@/lib/cloudinary';
 import { Button, buttonVariants } from "@/components/ui/button"
 import { uploadImageAction } from "../../actions/userscrud";
-
+import { redirect, useRouter } from 'next/navigation'
+import { experimental_useFormStatus as useFormStatus } from "react-dom";
+import { FaSpinner } from 'react-icons/fa6';
 
 cloudinary.config({
   cloud_name: 'dqojz5vft', 
@@ -11,10 +13,11 @@ cloudinary.config({
 })
 
 async function Home({ userId }: { userId: string }) {
-  const { resources: sneakers } = await cloudinary.api.resources_by_tag('nextjs-server-actions-upload-sneakers', { context: true });
-
+  const { pending } = useFormStatus();
+  const router = useRouter()
   async function create(formData: FormData) {
     'use server'
+    
     const file = formData.get('image') as File;
     const id = formData.get(userId);
     const arrayBuffer = await file.arrayBuffer();
@@ -48,14 +51,16 @@ async function Home({ userId }: { userId: string }) {
           console.error(error);
         }
 
-        
+        redirect('/categories')
       })
       .end(buffer);
+      
     });
     
   
    
     revalidatePath(`/users/${id}`)
+    router.push('/courses')
   }
   return (
     <div>
@@ -73,7 +78,10 @@ async function Home({ userId }: { userId: string }) {
             required
           />
         </div>
-        <Button>Submit</Button>
+        <Button> {pending ? <>
+            <FaSpinner className="animate-spin" /> &nbsp;
+            <p>Submit</p>
+          </> : "Save"}</Button>
       </form>
     </div>
   )

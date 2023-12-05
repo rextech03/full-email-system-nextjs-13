@@ -13,6 +13,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
+
 const UserForm = ({ user = {}, action }) => {
   const { pending } = useFormStatus();
   const [state, formAction] = useFormState(
@@ -21,6 +22,17 @@ const UserForm = ({ user = {}, action }) => {
   );
   if (state?.status === "ok") {
     redirect(`/users/${state.user.id || user.id}`);
+  }
+
+  function SubmitButton() {
+    const { pending } = useFormStatus()
+   
+    return (
+      <Button type="submit" aria-disabled={pending}>
+        {pending ? <p className="">Save</p> : <FaSpinner className="animate-spin" />}
+        {/* Add */}
+      </Button>
+    )
   }
 
   return (
@@ -93,13 +105,14 @@ const UserForm = ({ user = {}, action }) => {
       </div> */}
        <CardFooter className="flex flex-col">
       <div className="form-control sm:max-w-sm my-6">
-        <Button
+        {/* <Button
           className="w-full"
           type="submit"
           aria-disabled={pending}
         >
-          Save
-        </Button>
+          {Save
+        </Button> */}
+        <SubmitButton />
       </div>
       </CardFooter>
       <p aria-live="polite" className="sr-only">

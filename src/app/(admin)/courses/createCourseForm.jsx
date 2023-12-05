@@ -14,12 +14,13 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import axios from "axios";
 import { createPostAction } from "../../actions/tutorialscrud";
-
+import { useRouter } from 'next/navigation'
+import { FaSpinner } from "react-icons/fa6";
 
 
 const CourseForm =  () => {
 
- 
+  const router = useRouter()
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [published, setPublished] = useState(false);
@@ -28,7 +29,8 @@ const CourseForm =  () => {
     const [authorId, setAuthorId] = useState('');
     const [users, setUsers] = useState([]);
     const [categories, setCategories] = useState([]);
-  
+    const [isLoading, setIsLoading] = useState(false);
+
     const getPostUsers = async () => {
       try {
       const res = await axios.get(
@@ -59,7 +61,7 @@ const CourseForm =  () => {
     
         const handleSubmit = (event) => {
           event.preventDefault();
-  
+  setIsLoading(true);
         try {
           const data = { title, content, published, grouperId, authorId, final };
           
@@ -68,6 +70,7 @@ const CourseForm =  () => {
         } catch (error) {
           console.error(error);
         }
+        router.push('/courses')
       };
   
       const handleChange = (event) => {
@@ -216,7 +219,10 @@ const CourseForm =  () => {
           className="w-full"
           type="submit"
         >
-          Save
+           {isLoading ? <>
+            <FaSpinner className="animate-spin" /> &nbsp;
+            <p>Saving</p>
+          </> : "Save"}
         </Button>
       </div>
       </CardFooter>

@@ -14,7 +14,7 @@ export async function PUT (request: NextRequest) {
         featuredImage: body.result.secure_url,
         
       };
-      console.log(categoryData);
+      // console.log(categoryData);
       const { category } = await uploadImage(categoryData);
       revalidatePath("/categories");
       revalidatePath(`/categories/${body.categoryId}`);

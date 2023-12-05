@@ -13,10 +13,14 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import axios from "axios";
+import { useRouter } from 'next/navigation'
+import { FaSpinner } from "react-icons/fa6";
 
 const EditForm = ({ params }) => {
   const  categoryId  = params.id;
   
+  const router = useRouter()
+
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [published, setPublished] = useState(false);
@@ -24,6 +28,7 @@ const EditForm = ({ params }) => {
   const [grouperId, setGrouperId] = useState('');
   const [message, setMessage] = useState('')
   const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const getPostCategory = async () => {
     try {
@@ -43,6 +48,7 @@ const EditForm = ({ params }) => {
       const handleSubmit = (event) => {
         event.preventDefault();
 
+        setIsLoading(true);
       try {
         const response =  fetch('https://www.phoenixcreedacademy.com/api/courses', {
           method: 'PUT',
@@ -56,6 +62,7 @@ const EditForm = ({ params }) => {
       } catch (error) {
         console.error(error);
       }
+      router.push('/courses')
     };
 
     const handleChange = (event) => {
@@ -147,7 +154,10 @@ const EditForm = ({ params }) => {
           type="submit"
          
         >
-          Save
+          {isLoading ? <>
+            <FaSpinner className="animate-spin" /> &nbsp;
+            <p>Saving</p>
+          </> : "Save"}
         </Button>
       </div>
       </CardFooter>

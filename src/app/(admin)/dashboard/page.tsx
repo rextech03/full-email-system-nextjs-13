@@ -19,9 +19,13 @@ export  default async function page() {
 
     <div className="flex flex-wrap gap-4 min-h-screen w-full  ">     
      {tutorials?.slice(0, 4).map((tutorial) => (
+      
      <div key={tutorial.id}>
+      
        {tutorial.featuredImage && tutorial.content !== null ?
-       <AdminCard key={tutorial.id} imageAlt={tutorial.title} imagePath={tutorial.featuredImage} title={tutorial.title} description={tutorial?.content} buttonText={'View More'} path={`/tutorial/complete/${tutorial.id}`} />
+
+       
+       <AdminCard key={tutorial.id} imageAlt={tutorial.title} imagePath={tutorial.featuredImage} title={tutorial.title} description={tutorial?.content.slice(0, 16)} buttonText={'View More'} path={`/tutorial/complete/${tutorial.id}`} />
        : <></>}
      </div>        
    ))} 

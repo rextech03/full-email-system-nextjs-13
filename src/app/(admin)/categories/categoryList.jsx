@@ -8,7 +8,7 @@ import DeleteCategory from "./[categoryId]/deleteCategory";
 const CategoryList = async () => {
   const  data  = await getCategories();
   const categories = data.category;
-  console.log(categories);
+  // console.log(categories);
   let counter = 1
   return (
 <div className="grid place-items-center min-h-screen">
