@@ -1,10 +1,8 @@
-"use client"
-import Image from 'next/image'
+"use client";
 import Banner from "../app/components/banner";
 import Card from "../app/components/card";
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import { useSession } from 'next-auth/react';
 
 
 export default function Home() {
@@ -15,7 +13,7 @@ export default function Home() {
       imagePath: "/images/chart.jpg",
       imageAlt: "learn forex",
       title: "Forex Mastery Course", 
-      description: "Learn high technical analysis skills that would enable you extract money from the market with Confidence.", 
+      description: "Learn high technical analysis skills that would enable you extract money from the market with Confidence with our well curated mastery course.", 
       buttonText: "Enroll",
       path: "https://paystack.com/pay/accesscourses", 
       amount: "N350,000.00"
@@ -24,7 +22,7 @@ export default function Home() {
       imagePath: "/images/chart.jpg",
       imageAlt: "learn forex",
       title: "PCA NoteBook", 
-      description: `Purchase our PCA notebook so as to understand in details what’s you’ve been taught and also widen your knowledge in the forex market.`, 
+      description: `Purchase our PCA notebook so as to understand in details what’s you’ve been taught and also widen your  knowledge in the forex market.`, 
       buttonText: "Buy Now",
       path: "https://paystack.com/pay/materialsaccess", 
       amount: "N100,000.00"
@@ -45,13 +43,10 @@ export default function Home() {
      <Navbar />
       <Banner />
 
-      <div className="  h-full bg-gray-200 w-full flex justify-center items-center">
-            
-      {/* <h2 className="text-black text-3xl text-center py-4 font-bold">Online Courses</h2> */}
-      
-      
+      <div className="h-full bg-gray-200 w-full flex justify-center items-center">
 
-                 <div className=" w-full px-4 md:w-5/6 my-4 md:flex justify-between">
+      <div className=" w-full px-4 md:w-5/6 my-4 md:flex justify-between">
+                 
       {cardContent.map((item, idx) => (
       
         <Card 
@@ -66,7 +61,7 @@ export default function Home() {
       ))}
     
     </div>
-    {/* </motion.div> */}
+    
     </div>
     <Footer />
     </>

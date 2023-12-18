@@ -14,7 +14,7 @@ export default function Banner() {
         >
         
   
-        <div className=" h-[34rem] w-full grid place-items-center xl:h-[72rem]">
+        <div className=" h-[24rem] w-full grid place-items-center lg:h-[52rem]">
           
           <div className="m-auto max-w-5xl py-12 sm:py-8 lg:py-2 px-16  rounded bg-transparent">
             
