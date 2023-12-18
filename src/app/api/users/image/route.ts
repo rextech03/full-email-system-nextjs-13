@@ -12,7 +12,7 @@ export async function PUT (request: NextRequest) {
     try {
     //   const id = body.categoryId;
       const userData = {
-        id : body.userId,
+        id : body.id,
         profileImage: body.profileImage,
         
       };
