@@ -72,6 +72,7 @@ export const deleteUser = async (id:string) => {
 };
 
 export const uploadImage = async ( uploadData:uploadData) => {
+  console.log(uploadData);
   try {
     await prisma.user.update({ where: { id: uploadData.id }, data: uploadData });
     return { user: uploadData };
