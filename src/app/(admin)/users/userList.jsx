@@ -8,7 +8,7 @@ import DeleteUser from "../users/[userId]/deleteUser";
 const UserList = async () => {
   const data = await getUsers();
   const users = data.users;
-  console.log(users);
+  // console.log(users);
   let counter = 1
   return (
 

@@ -14,21 +14,27 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { FaSpinner } from "react-icons/fa6";
+import { useRouter } from 'next/navigation';
 
 
 
 export default function SignUpWithImage() {
 
+    const router = useRouter();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmpassword, setConfirmPassword] = useState('');
     const [message, setMessage] = useState('');
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleSubmit = async () => {
         setMessage("Signing up...");
+        setIsLoading(true);
         const message = await signUp(name, email, password);
         setMessage(message);
+        router.push('/');
     };
   return (
     <>
@@ -97,7 +103,9 @@ export default function SignUpWithImage() {
                 </span>
               </CardContent>
               <CardFooter className="flex flex-col">
-                <Button className="w-full" onClick={handleSubmit}>Sign Up</Button>
+                <Button className="w-full" onClick={handleSubmit}> {isLoading ? <div className='flex justify-items-center items-center gap-2'>
+                      <FaSpinner className="animate-spin"  /> <p>Signing Up</p>
+                     </div> :  "Sign Up"}</Button>
                 <p className="mt-2 text-xs text-center text-gray-700">
                   {" "}
                   Already have an account?{" "}

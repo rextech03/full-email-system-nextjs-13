@@ -3,6 +3,8 @@ import { revalidatePath } from 'next/cache';
 import cloudinary from '@/lib/cloudinary';
 import { Button, buttonVariants } from "@/components/ui/button"
 import { uploadImageAction } from "../actions/categoriescrud";
+import { SaveButton } from './SaveButton';
+import { useRouter } from 'next/navigation';
 
 
 cloudinary.config({
@@ -14,6 +16,7 @@ cloudinary.config({
 async function Home({ categoryId }: { categoryId: string }) {
   const { resources: sneakers } = await cloudinary.api.resources_by_tag('nextjs-server-actions-upload-sneakers', { context: true });
 
+  const router = useRouter();
   async function create(formData: FormData) {
     'use server'
     const file = formData.get('image') as File;
@@ -46,6 +49,7 @@ async function Home({ categoryId }: { categoryId: string }) {
           });
           // const { message } =  response.
           // alert(message);
+          router.push(`/categories/edit/${categoryId}`)
         } catch (error) {
           console.error(error);
         }
@@ -76,7 +80,9 @@ async function Home({ categoryId }: { categoryId: string }) {
             required
           />
         </div>
-        <Button>Submit</Button>
+        {/* <Button>Submit</Button>
+         */}
+         <SaveButton />
       </form>
     </div>
   )

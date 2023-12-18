@@ -23,7 +23,11 @@ type categoryData = {
   
 export const getCategories = async () => {
   try {
-    const category = await prisma.category.findMany();
+    const category = await prisma.category.findMany({
+      orderBy: {
+        createdAt: 'desc',
+      },
+    });
     return { category };
   } catch (error) {
     return { error };

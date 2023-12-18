@@ -5,6 +5,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken'
 import { JWT } from "next-auth/jwt";
 import NextAuth from "next-auth/next";
+import { UserRole } from "@prisma/client";
 
 export const authOptions: AuthOptions = {
     providers: [
@@ -22,6 +23,7 @@ export const authOptions: AuthOptions = {
                     type: 'password'
                 }
             },
+            
             authorize: async (credentials) => {
                 if(!credentials) {
                     return null;
@@ -83,7 +85,11 @@ export const authOptions: AuthOptions = {
     callbacks: {
         async session(params: {session: Session; token: JWT; user: User}) {
             if(params.session.user) {
-                params.session.user.email = params.token.email;
+                params.session.user.id = params.token.id as string,
+                params.session.user.name = params.token.name as string,
+                params.session.user.email = params.token.email as string;
+                params.session.user.image = params.token.profileImage as string;
+                params.session.user.role = params.token.role as UserRole;
             }
 
             return params.session;
@@ -97,6 +103,7 @@ export const authOptions: AuthOptions = {
             trigger?: any;
             session?: Session | null | undefined;
         }) {
+            
             // update session
             if(params.trigger === "update" && params.session?.user?.email){
                 // params.token.email = params.session.email

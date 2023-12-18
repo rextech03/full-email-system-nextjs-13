@@ -2,6 +2,8 @@ import { revalidatePath } from 'next/cache';
 import cloudinary from '@/lib/cloudinary';
 import { Button, buttonVariants } from "@/components/ui/button"
 import { uploadVideoAction } from "../../../../actions/tutorialscrud";
+import { SaveButton } from '@/app/components/SaveButton';
+import { useRouter } from 'next/navigation';
 
 
 cloudinary.config({
@@ -11,6 +13,8 @@ cloudinary.config({
 })
 
 async function Home({ courseId }: { courseId: string }) {
+
+  const router = useRouter();
 
   async function create(formData: FormData) {
     'use server'
@@ -29,7 +33,7 @@ async function Home({ courseId }: { courseId: string }) {
           return;
         }
         resolve(result);
-        // console.log(result);
+        console.log(result);
 
         const data = {courseId, result }
         // console.log(result?.secure_url);
@@ -56,7 +60,8 @@ async function Home({ courseId }: { courseId: string }) {
     
   
    
-    revalidatePath(`/categories/${id}`)
+    revalidatePath(`/courses/coursevideo/${id}`)
+    router.push(`/courses/${courseId}`)
   }
   return (
     <div>
@@ -75,7 +80,8 @@ async function Home({ courseId }: { courseId: string }) {
             required
           />
         </div>
-        <Button>Submit</Button>
+        {/* <Button>Submit</Button> */}
+        <SaveButton />
       </form>
     </div>
   )

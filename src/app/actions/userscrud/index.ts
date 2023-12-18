@@ -4,14 +4,17 @@ import { uploadImage, createUser, deleteUser, updateUser } from "../../lib/userc
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import bcrypt from 'bcryptjs';
+import cloudinary from '@/lib/cloudinary';
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
-// type userData = {
-//   name: string | null,
-//     email: string | null,
-//     passwordHash: string | null,
-//   }
+cloudinary.config({
+  cloud_name: 'dqojz5vft', 
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+})
 
-//   const formData = new FormData();
+
 
 export async function createUserAction(prevState: string, formData: any) {
   try {
@@ -29,19 +32,19 @@ export async function createUserAction(prevState: string, formData: any) {
   }
 }
 
-export async function updateUserAction(prevState:string, formData: any) {
+export async function updateUserAction(prevState:string, data: any) {
   try {
-    const id = formData.get("id");
+    const id = data.id;
     const userData = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      // passwordHash: formData.get("password"),
+      name: data.name,
+      email: data.email,
+     
     };
     console.log(userData)
     const { user, error } = await updateUser(id, userData);
     if (error) throw error;
     revalidatePath("/users");
-    revalidatePath(`/users/${formData.get("id")}`);
+    revalidatePath(`/users/${id}`);
     return { status: "ok", message: "User created with success", user };
   } catch (error) {
     return { status: "nok", message: "Failed to update user." };
@@ -70,4 +73,47 @@ export async function uploadImageAction( data: any ) {
   } catch (error) {
     return { status: "nok", message: "Failed to update User Profile Photo." };
   }
+}
+
+export async function editImage(formData: FormData) {
+  
+  const file = formData.get('image') as File;
+  const userid = formData.get('userId');
+  const arrayBuffer = await file.arrayBuffer();
+  const buffer = new Uint8Array(arrayBuffer);
+  await new Promise((resolve, reject) => {
+    cloudinary.uploader.upload_stream({
+      tags: ['users']
+    }, function (error, result) {
+      if (error) {
+        reject(error);
+        return;
+      }
+      resolve(result);
+      
+      
+        const id = userid as string
+        const profileImage = result!.secure_url 
+        const data = {id, profileImage }
+        uploadImage(data)
+  
+      //   update({
+      //     ...session,
+      //     user: {
+      //         ...session?.user,
+      //         image: profileImage,
+              
+      //     }
+      // })
+
+    })
+    .end(buffer);
+    
+    
+  });
+ 
+
+ 
+  revalidatePath(`/user/profilePhoto`)
+  // router.push('/courses')
 }

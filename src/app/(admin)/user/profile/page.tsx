@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { useSession } from "next-auth/react"
+import Image from 'next/image';
 
 const Profile = () => {
   const { data: session, status } = useSession()
@@ -13,6 +14,7 @@ const Profile = () => {
       <div className="font-bold text-xl mb-2">Profile</div>
       {session && session.user?.email ? (
         <> 
+        <Image alt={session.user?.name} src={session.user?.image} width={164} height={34} />
       <p className="text-gray-700 text-base">
         Name: {session.user?.name}
        

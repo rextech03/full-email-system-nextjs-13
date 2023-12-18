@@ -2,6 +2,7 @@ import { revalidatePath } from 'next/cache';
 import cloudinary from '@/lib/cloudinary';
 import { Button, buttonVariants } from "@/components/ui/button"
 import { uploadImageAction } from "../../actions/tutorialscrud";
+import { SaveButton } from '@/app/components/SaveButton';
 
 
 cloudinary.config({
@@ -73,7 +74,8 @@ async function Home({ courseId }: { courseId: string }) {
             required
           />
         </div>
-        <Button>Submit</Button>
+        {/* <Button>Submit</Button> */}
+      <SaveButton />
       </form>
     </div>
   )

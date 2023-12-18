@@ -19,10 +19,10 @@ export const SaveButton = ({
     const { pending } = useFormStatus();
   
     return (
-      <button
+      <Button
         type="submit"
         
-        disabled={pending }
+        aria-disabled={pending }
       >
         {pending ? (
           <FaSpinner className="animate-spin" message={loadingLabel} />
@@ -33,7 +33,7 @@ export const SaveButton = ({
             
           </>
         )}
-      </button>
+      </Button>
     );
   };
   

@@ -2,20 +2,31 @@
 
 import { useSession } from 'next-auth/react';
 import React, { useState } from 'react';
+import { updateUserAction } from '../actions/userscrud';
+import { useRouter } from 'next/navigation';
+import { FaSpinner } from 'react-icons/fa6';
 
 
 const UpdateProfile = () => {
+
+    const router = useRouter();
+
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const { data: session, update } = useSession();
 
+    const [isLoading, setIsLoading] = useState(false)
     const [message, setMessage] = useState('');
 
     const handleSubmit = async () => {
+        setIsLoading(true)
         setMessage("Updating profile...");
         // if (session && session.user) {
         //     session.user.email = email;
         // }
+        const id = session?.user.id as string;
+        const data = {id, name, email}
+        updateUserAction(id, data)
         await update({
             ...session,
             user: {
@@ -25,6 +36,7 @@ const UpdateProfile = () => {
             }
         })
         setMessage(message);
+        router.push('/user/profile')
     };
 
     return (
@@ -53,8 +65,9 @@ const UpdateProfile = () => {
                     
                     <button 
                     onClick={handleSubmit}
-                    className="w-full text-white bg-black  hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-                     Login
+                    className="w-full text-white bg-black grid place-items-center items-center hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                     
+                     {isLoading ? <div className="flex text-center gap-4"> <FaSpinner className="animate-spin"  /> <p>Updating Profile</p></div> : 'Update Account'}
                     </button>
                     
                     </div>

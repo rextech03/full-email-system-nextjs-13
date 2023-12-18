@@ -4,13 +4,15 @@ import React, { useEffect, useState } from 'react';
 import { signUp } from '../actions/users/signUp';
 import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
+import { FaSpinner } from 'react-icons/fa6'
 import Image from 'next/image';
 
 const SignInForm = () => {
     const router = useRouter();
 
-    const { status } = useSession();
+    const { status, } = useSession();
+    // console.log(session);
+    
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -19,8 +21,11 @@ const SignInForm = () => {
 
     const [showPassword, setShowPassword] = useState(false);
 
+    const [isLoading, setIsLoading] = useState(false)
+
     const handleSubmit = async () => {
         setMessage('Signing in...');
+        setIsLoading(true);
         
         try {
             const signInResponse = await signIn('credentials', {
@@ -40,11 +45,12 @@ const SignInForm = () => {
         }
 
         setMessage(message);
+        
     };
 
     useEffect(() => {
         if (status === 'authenticated') {
-            router.refresh();
+            // router.refresh();
             router.push('/');
         }
     }, );
@@ -135,8 +141,10 @@ const SignInForm = () => {
                     
                     <button 
                     onClick={handleSubmit}
-                    className="w-full text-white bg-black  hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-                     Login
+                    className="w-full text-white bg-black grid place-items-center items-center hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                     {isLoading ? <div className='flex justify-items-center items-center gap-2'>
+                      <FaSpinner className="animate-spin"  /> <p>Logging in</p>
+                     </div> :  "Login"}
                     </button>
                     
                     </div>

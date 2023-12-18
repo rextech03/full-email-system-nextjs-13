@@ -1,6 +1,6 @@
 import { getUser } from "../../../lib/usercrud";
 
-// import Avatar from "@/app/components/Avatar";
+import Image from 'next/image'
 import DeleteUser from "./deleteUser";
 import Link from "next/link";
 
@@ -14,7 +14,7 @@ const User = async ({ params }) => {
     <div className='max-w-sm bg-gray-300 rounded overflow-hidden shadow-lg p-4'>
     
       <h3 className="font-bold text-xl mb-2">User Details</h3>
-      
+      <Image alt={user.name} src={user?.profileImage} width={164} height={34} />
         <div>
           <h2 className="text-sm">Name: {user.name }</h2>
           <a className="text-sm" href={`mailto:${user.email}`}>Email: {user.email}</a>

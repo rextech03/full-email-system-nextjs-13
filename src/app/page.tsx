@@ -4,9 +4,12 @@ import Banner from "../app/components/banner";
 import Card from "../app/components/card";
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
+import { useSession } from 'next-auth/react';
 
 
 export default function Home() {
+  // const { status, data: session, } = useSession();
+  // console.log(session);
   const cardContent = [
     { 
       imagePath: "/images/chart.jpg",

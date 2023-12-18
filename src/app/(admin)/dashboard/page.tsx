@@ -1,8 +1,15 @@
+
 import { getPosts } from "../../lib/tutorialscrud";
 import { getCategories } from "../../lib/categoriescrud";
 import AdminCard from "@/app/components/adminCard";
+// import { getServerSession } from "next-auth";
+// import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 export  default async function page() {
+
+  // const session = await getServerSession(authOptions)
+  // console.log(session);
+
   const  data  = await getPosts();
   const tutorials = data.posts;
 

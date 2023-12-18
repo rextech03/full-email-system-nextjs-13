@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import ExpandingArrow from '../../../components/expanding-arrow'
-import Uploader from '../uploader'
-import { Toaster } from '../../../components/toaster'
+import ExpandingArrow from '../../../../components/expanding-arrow'
+import Uploader from '../../uploader'
+import { Toaster } from '../../../../components/toaster'
 
-export default function Home({ params }: { params: { categoryId: string } }) {
-  const id = params.categoryId
+export default function Home({ params }: { params: { userId: string } }) {
+  const id = params.userId
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-center">
       <Toaster />

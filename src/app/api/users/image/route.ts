@@ -4,22 +4,24 @@ import { revalidatePath } from "next/cache";
 
 export async function PUT (request: NextRequest) {
   
-    const body = await request.json();
-    console.log({ body });
+  
+  const body = await request.json();
+  console.log({ body });
+ 
    
     try {
     //   const id = body.categoryId;
-      const categoryData = {
-        id : body.categoryId,
+      const userData = {
+        id : body.userId,
         profileImage: body.result.secure_url,
         
       };
-      console.log(categoryData);
-      const { user } = await uploadImage(categoryData);
-      revalidatePath("/categories");
-      revalidatePath(`/categories/${body.categoryId}`);
-      return NextResponse.json({ status: "ok", message: "Category editted with success", user });
+      console.log(userData);
+      const { user } = await uploadImage(userData);
+      revalidatePath("/users");
+      revalidatePath(`/users/${body.categoryId}`);
+      return NextResponse.json({ status: "ok", message: "user edited with success", user });
     } catch (error) {
-      return NextResponse.json({ status: "nok", message: "Failed to edit category." });
+      return NextResponse.json({ status: "nok", message: "Failed to edit user." });
     }
   }

@@ -53,6 +53,9 @@ export const getPosts = async () => {
             },
             updatedAt: true,
    },
+   orderBy: {
+    createdAt: 'desc',
+  },
   });
   
     return { posts };

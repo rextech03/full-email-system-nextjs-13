@@ -58,6 +58,7 @@ const NavAdmin = () => {
                     <a href="https://paystack.com/pay/materialsaccess">Note Book</a>
                     <Link href='/tutorial'>Courses</Link>
 
+                    {session.user?.role == "user" ? (
                     <DropdownMenu>
                       <DropdownMenuTrigger> <div className="flex bg-gray-200 justify-items-center items-center  rounded p-2 "><p>Manage</p><FaArrowDown  /></div></DropdownMenuTrigger>
                       <DropdownMenuContent>
@@ -66,15 +67,11 @@ const NavAdmin = () => {
                         <DropdownMenuLabel><Link href='/courses'>Courses</Link></DropdownMenuLabel>
                       </DropdownMenuContent>
                     </DropdownMenu>
-
-                    {/* <DropdownMenu>
-                      <DropdownMenuTrigger> <div className="flex bg-gray-200 justify-items-center items-center  rounded p-2 "><p className='pr-2'>{session.user?.name}</p><FaArrowDown  /></div></DropdownMenuTrigger>
-                      <DropdownMenuContent>
-                        <DropdownMenuLabel><Link href="/user/profile">Profile</Link></DropdownMenuLabel>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuLabel><Link href='/auth/signout'>Sign out</Link></DropdownMenuLabel>
-                      </DropdownMenuContent>
-                    </DropdownMenu> */}
+  ) : (
+  <>
+  </>
+ )} 
+                   
 
                     </>
                 ) : (
@@ -89,15 +86,21 @@ const NavAdmin = () => {
             </ul>
           </div>
           <div>
-          <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-            {session && session.user?.email ? (
+          <ul className="justify-center items-center  space-y-8 md:flex md:space-x-6 md:space-y-0">
+            {session && session.user?.image ? (
                     <>  
           <DropdownMenu>
-                      <DropdownMenuTrigger> <div className="flex bg-gray-200 justify-items-center items-center  rounded p-2 "><p className='pr-2'>{session.user?.name}</p><FaArrowDown  /></div></DropdownMenuTrigger>
+                      <DropdownMenuTrigger> <div className="flex bg-gray-200 justify-items-center items-center  rounded-full p-2 ">
+                        <div className='pr-2'>
+                          <Image src={session.user?.image} alt="avatar" 
+                          width={36} height={36} 
+                          className='rounded-full '/>
+                        
+                        </div><FaArrowDown  /></div></DropdownMenuTrigger>
                       <DropdownMenuContent>
                         {/* <DropdownMenuLabel><Link href="/user/profile">Profile</Link></DropdownMenuLabel> */}
                         <DropdownMenuLabel><Link href='/user/profile'>Profile</Link></DropdownMenuLabel>
-                        <DropdownMenuLabel><Link href='/user/profilePhoto'>Edit Profile Photo</Link></DropdownMenuLabel>
+                        <DropdownMenuLabel><Link href={`/user/profilePhoto/`} >Edit Profile Photo</Link></DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuLabel><Link href='/auth/signout'>Sign out</Link></DropdownMenuLabel>
                       </DropdownMenuContent>
