@@ -12,8 +12,9 @@ const Profile = () => {
      
     <div className="px-6 py-4 ">
       <div className="font-bold text-xl mb-2">Profile</div>
-      {session && session.user?.email ? (
+      {session && session.user?.name ? (
         <> 
+       
         <Image alt={session.user?.name} src={session.user?.image} width={164} height={34} />
       <p className="text-gray-700 text-base">
         Name: {session.user?.name}
