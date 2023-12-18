@@ -11,8 +11,8 @@ function UploadForm({ userId }: { userId: string }) {
     <form action={
         async formData=>{
             await editImage(formData)
-            redirect('/auth/signout')
-            // console.log(editImage);
+            // redirect('/auth/signout')
+            console.log("editImage");
         }
     } 
     className="bg-white border border-slate-200 dark:border-slate-500 rounded p-6 mb-6">

@@ -95,6 +95,7 @@ export async function editImage(formData: FormData) {
         const id = userid as string
         const profileImage = result!.secure_url 
         const data = {id, profileImage }
+        console.log(data);
         uploadImage(data)
   
       //   update({
