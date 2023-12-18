@@ -63,6 +63,8 @@ async function Home({ courseId }: { courseId: string }) {
     revalidatePath(`/courses/coursevideo/${id}`)
     router.push(`/courses/${courseId}`)
   }
+
+  
   return (
     <div>
       <h2 className="text-xl font-bold mb-4">Add a New Video</h2>
@@ -76,7 +78,7 @@ async function Home({ courseId }: { courseId: string }) {
             className="block w-full border-slate-400 rounded focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
             type="file"
             name="video"
-            accept='.mp4, mv4'
+            accept='video/*'
             required
           />
         </div>

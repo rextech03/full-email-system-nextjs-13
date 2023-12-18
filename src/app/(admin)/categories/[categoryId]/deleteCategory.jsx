@@ -1,5 +1,6 @@
 "use client";
 import { deleteCategoryAction } from "../../../actions/categoriescrud";
+import { Button, buttonVariants } from "@/components/ui/button"
 import { useState } from "react";
 
 const DeleteCategory = ({ id }) => {
@@ -12,16 +13,15 @@ const DeleteCategory = ({ id }) => {
 
   return (
     <form>
-      <button
+      <Button
         type="submit"
         onClick={handleDeleteCategory}
-        className="btn btn-error btn-sm btn-outline"
         aria-disabled={pending}
         disabled={pending}
       >
         {pending && <span className="loading loading-spinner"></span>}
         Delete
-      </button>
+      </Button>
     </form>
   );
 };

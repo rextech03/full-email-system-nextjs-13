@@ -25,7 +25,7 @@ const Category = async ({ params }) => {
           </div>
           {/* <p className="text-sm" >Created On: <Date dateString={category.createdAt} /></p> */}
         </div>
-        <div className="flex justify-between py-2">
+        <div className="flex justify-between py-2 gap-2">
         <Link href={`/categories/edit/${categoryId}`} className='py-2 px-4 bg-black text-white rounded'>
           Edit
         </Link>

@@ -30,7 +30,7 @@ function UploadForm({ userId }: { userId: string }) {
       <input
         id="image"
         className="block w-full border-slate-400 rounded focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-        type="file"
+        type="image"
         name="image"
         required
       />

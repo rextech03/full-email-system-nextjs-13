@@ -87,16 +87,17 @@ const NavAdmin = () => {
           </div>
           <div>
           <ul className="justify-center items-center  space-y-8 md:flex md:space-x-6 md:space-y-0">
-            {session && session.user?.name  ? (
+            {session && session.user?.image  ? (
                     <>  
           <DropdownMenu>
                       <DropdownMenuTrigger> <div className="flex bg-gray-200 justify-items-center items-center  rounded-full p-2 ">
                         <div className='pr-2'>
-                          <p>{session.user.name}</p>
-                          {/* {session.user.image ? */}
-                          {/* <Image src={session.user.image} alt="avatar" 
+                          {/* <p>{session.user.name}</p> */}
+                          {/* {session.user.image ?  */}
+                          
+                          <Image src={session.user.image} alt="avatar" 
                           width={36} height={36} 
-                          className='rounded-full '/> */}
+                          className='w-8 h-8 rounded-full '/> 
                           {/* : <></>} */}
                         </div><FaArrowDown  /></div>
                         </DropdownMenuTrigger>
