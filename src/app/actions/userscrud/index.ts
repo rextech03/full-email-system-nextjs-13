@@ -96,7 +96,21 @@ export async function editImage(formData: FormData) {
         const profileImage = result!.secure_url 
         const data = {id, profileImage }
         
-        uploadImage(data)
+        // uploadImage(data)
+        try {
+          const response =  fetch('https://www.phoenixcreedacademy.com/api/users/image', {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+          });
+          // const { message } =  response.
+          // alert(message);
+          
+        } catch (error) {
+          console.error(error);
+        }
   
       //   update({
       //     ...session,

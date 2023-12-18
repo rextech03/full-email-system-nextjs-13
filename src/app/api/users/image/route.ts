@@ -13,10 +13,10 @@ export async function PUT (request: NextRequest) {
     //   const id = body.categoryId;
       const userData = {
         id : body.userId,
-        profileImage: body.result.secure_url,
+        profileImage: body.profileImage,
         
       };
-      console.log(userData);
+      // console.log(userData);
       const { user } = await uploadImage(userData);
       revalidatePath("/users");
       revalidatePath(`/users/${body.categoryId}`);
