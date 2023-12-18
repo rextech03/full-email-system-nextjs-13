@@ -79,7 +79,7 @@ const CategoryList = async () => {
                       </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900">{category.content}</div>
+                    <div className="text-sm text-gray-900">{category.content.substring(0, 45)}</div>
                 
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">

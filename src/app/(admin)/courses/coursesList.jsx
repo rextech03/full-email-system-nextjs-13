@@ -69,7 +69,7 @@ const CoursesList = async () => {
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-900">{tutorial.content}</div>
+                    <div className="text-sm text-gray-900">{tutorial.content.substring(0, 45)}</div>
                 
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
@@ -92,9 +92,10 @@ const CoursesList = async () => {
               />
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex justify-items-center items-center gap-4">
-                    <Link href={`/courses/${tutorial.id}`}  className="text-indigo-600 hover:text-indigo-900">
-                      Edit
+                  <Link href={`/courses/${tutorial.id}`}  className="px-4 py-2 rounded bg-black text-white hover:text-indigo-900">
+                      View
                     </Link>
+                   
                     <DeleteTutorial id={tutorial.id} />
                   </td>
                 </tr>
