@@ -50,7 +50,7 @@ const NavAdmin = () => {
             }`}
           >
             <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-            {session && session.user?.email ? (
+            {session && session.user?.name ? (
                     <>  
                     <Link href='/dashboard'>Dashboard</Link>
                     <Link href='/onboarding'>Onboarding</Link>
