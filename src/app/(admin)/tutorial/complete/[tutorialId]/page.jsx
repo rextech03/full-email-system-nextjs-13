@@ -37,8 +37,7 @@ export default async function page({params}) {
       <div className="flex justify-items-center items-start">
         <div className="w-1/3 py-4">
           <div></div>
-          <Link href={''} className='py-2 px-4 bg-black text-white rounded' >Back to Course
-          </Link>
+          <Link href='/tutorial' className='py-2 px-4 bg-black text-white rounded' >Back to Course</Link>
           <p className='py-4'>{post?.section.title}</p>
           <hr />
           {categoryPost.map((data) => (

@@ -23,7 +23,7 @@ const ProtectedLayout = async ({children}: ProtectedLayoutProps) => {
   return (
     <>
     <NavAdmin />
-        {children}
+      <div className="min-h-screen">{children}</div>
         <Footer />
     </>
   );
