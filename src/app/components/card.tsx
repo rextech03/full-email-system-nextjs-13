@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { motion } from "framer-motion"
+import { motion, MotionConfig } from "framer-motion"
 
 interface Props {
   imagePath:string,
@@ -14,44 +14,17 @@ interface Props {
 export default function Card( props: Props ) {
   
   return (
-//     <motion.div
-//   initial={{ opacity: 0 }}
-//   whileInView={{ opacity: 1 }}
-//   viewport={{ once: true }}
-// >
-//     <div className="py-4">
-//     <div className="w-full md:w-1/3 rounded overflow-hidden shadow-lg">
-//     <Image className="w-full" src={props.imagePath} alt={props.imageAlt} width={125} height={125}  />
-//     <div className="px-6 py-4">
-//       <div className="font-bold text-xl mb-2">{props.title}</div>
-//       <p className="text-gray-700 text-base">
-//       {props.description}
-//       </p>
-//     </div>
-//     <div className="px-6 pt-4 pb-2 flex items-center justify-between">
-//       <div> <a href={props.path} className="inline-block bg-gray-200 rounded-full text-sm font-semibold text-gray-700 ">{props.buttonText}</a></div>
-//      <div><p className='text-sm'>{props.amount}</p></div>
-      
-//     </div>
-//   </div>
-//   </div>
-//   </motion.div>
 
+    <MotionConfig transition={{ duration: 1 }}>
+    <motion.div
+                   initial={{ opacity: 0, x: -200 }}
+                   whileInView={{ opacity: 1, x: 0 }}
+                   >
 <section className="py-10 md:py-16">
 <div className="container max-w-screen-xl mx-auto px-4">
-<motion.div
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  viewport={{ once: true }}
->
+
         <div className="bg-gray-50  rounded-md">
-        <Image className="w-full" src={props.imagePath} alt={props.imageAlt} width={125} height={125}  />
-            {/* <div
-                className="w-20 py-6 flex justify-center bg-gray-100 rounded-md mb-4"
-            > */}
-             
-                {/* <i data-feather="activity"></i> */}
-            {/* </div> */}
+        <Image className="w-full h-48" src={props.imagePath} alt={props.imageAlt} width={125} height={125}  />
 
             <div className="py-8 px-8">
             <h4 className="font-medium text-gray-700 text-lg mb-4">
@@ -71,8 +44,10 @@ export default function Card( props: Props ) {
      
         </div>
 
-        </motion.div>
 </div>
 </section>
+
+</motion.div>
+         </MotionConfig>
   )
 }

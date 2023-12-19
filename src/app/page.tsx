@@ -46,9 +46,9 @@ export default function Home() {
       <div className="h-full bg-gray-200 w-full flex justify-center items-center">
 
       <div className=" w-full px-4 md:w-5/6 my-4 md:flex justify-between">
-                 
-      {cardContent.map((item, idx) => (
       
+      {cardContent.map((item, idx) => (
+     
         <Card 
         key={idx} 
         imageAlt={item.imageAlt} 
@@ -57,7 +57,9 @@ export default function Home() {
         description={item.description} 
         buttonText={item.buttonText} 
         path={item.path} 
-        amount={item.amount} />
+        amount={item.amount} 
+         />
+        
       ))}
     
     </div>
