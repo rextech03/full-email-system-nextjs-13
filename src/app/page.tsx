@@ -31,7 +31,7 @@ export default function Home() {
     imagePath: "/images/chart.jpg",
     imageAlt: "Private Mentorship",
     title: "Private Mentorship", 
-    description: "Get the chance to learn with Phoenix privately in his daily session this will best help you concentrate more and tune up your skill in no time.", 
+    description: "Get the chance to learn with Phoenix privately in his daily session this will best help you concentrate more and tune up your skill in no time and at your pace.", 
     buttonText: "Enroll",
     path: "https://paystack.com/pay/vipsection",
     amount: "N500,000.00"
@@ -45,7 +45,7 @@ export default function Home() {
 
       <div className="h-full bg-gray-200 w-full flex justify-center items-center">
 
-      <div className=" w-full px-4 md:w-5/6 my-4 md:flex justify-between">
+      <div className=" w-full px-4  my-4 md:flex justify-between">
       
       {cardContent.map((item, idx) => (
      

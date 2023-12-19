@@ -5,7 +5,7 @@ export default function Banner() {
  
 
   return (
-    <div className="bg-black h-2/3 filter grayscale hover:grayscale-0" style={{ 
+    <div className="bg-black h-2/3 " style={{ 
         backgroundImage: `url(/images/banner.jpeg)`, 
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
@@ -15,7 +15,7 @@ export default function Banner() {
         >
         
   
-        <div className=" h-[24rem] w-full grid place-items-center lg:h-[52rem]">
+        <div className=" h-[34rem] w-full grid place-items-center lg:h-[52rem]">
           
           <div className="m-auto max-w-5xl py-12 sm:py-8 lg:py-2 px-16  rounded bg-transparent">
             

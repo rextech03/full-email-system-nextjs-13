@@ -23,15 +23,15 @@ export default function Card( props: Props ) {
 <section className="py-10 md:py-16">
 <div className="container max-w-screen-xl mx-auto px-4">
 
-        <div className="bg-gray-50  rounded-md">
+        <div className="bg-gray-50  rounded-md  sm:min-h-[34rem]  md:min-h-[34rem] md:min-w-68 lg:min-h-[27rem]">
         <Image className="w-full h-48" src={props.imagePath} alt={props.imageAlt} width={125} height={125}  />
-
-            <div className="py-8 px-8">
+        
+            <div className="py-8 px-8 ">
             <h4 className="font-medium text-gray-700 text-lg mb-4">
             {props.title}
             </h4>
 
-            <p className="font-normal text-gray-500 text-md">
+            <p className="font-normal text-gray-500 text-md items-stretch">
             {props.description}
             </p>
             </div>
@@ -41,10 +41,10 @@ export default function Card( props: Props ) {
       <div><p className='text-sm'>{props.amount}</p></div>
       
      </div>
-     
+     </div>
         </div>
 
-</div>
+
 </section>
 
 </motion.div>
