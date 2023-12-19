@@ -42,7 +42,7 @@ export  default async function page() {
 </div>
 
 <div className="px-8  py-2 bg-gray-400">
-    <h4 className="text-3xl my-4 text-black font-bold">Lessons</h4>
+    <h4 className="text-5xl font-bold my-4 text-black font-weight-bold">Lessons</h4>
     <div className="flex flex-wrap gap-4 min-h-screen w-full  ">
      
     {categories?.map((category) => (

@@ -16,7 +16,7 @@ export  default async function page() {
     <div className="bg-[url('/images/book.jpg')] ">
       
     <div className="py-4 mx-5" > 
-    <h4 className="text-2xl my-4 text-white font-weight-bold">Latest Content</h4>
+    <h4 className="text-5xl font-bold my-4 text-white font-weight-bold">Latest Content</h4>
 
     <div className="flex gap-4 align-items-start">
     {tutorials?.slice(0, 4).map((tutorial) => (
@@ -31,7 +31,7 @@ export  default async function page() {
 </div>
 
 <div className="container  py-2 bg-gray-400">
-    <h4 className="text-3xl my-4 text-black font-bold">Lessons</h4>
+    <h4 className="text-5xl font-bold my-4 text-black font-weight-bold">Lessons</h4>
     <div className="flex flex-wrap gap-4 min-h-screen w-full  ">
      
     {categories?.map((category) => (
