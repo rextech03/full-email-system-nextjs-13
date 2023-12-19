@@ -28,11 +28,11 @@ const Navbar = () => {
     ]
 
     return (
-        <nav className="bg-gray-300 w-full border-b md:border-0 max-w-screen">
+        <nav className="bg-gray-300 sticky top-0 w-full border-b md:border-0 max-w-screen">
         <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:justify-between md:px-8 xl:px-1">
-          <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <Link href="/">
-              <Image src="/images/logo.png" alt="logo" width={180} height={180} className="h-12 w-12" />
+          <div className="flex items-center justify-between  md:block">
+            <Link href="/" className=''>
+              <Image src="/images/logo.png" alt="logo" width={180} height={180} className="h-16 w-16 bg-white p-1" />
             </Link>
             <div className="md:hidden">
               

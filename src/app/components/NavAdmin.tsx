@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import {useState} from 'react';
 import { authOptions } from '../api/auth/[...nextauth]/route';
 // import { getServerSession } from 'next-auth/next';
 import { useSession } from "next-auth/react"
@@ -18,7 +18,7 @@ import { FaArrowDown, FaAlignJustify } from "react-icons/fa";
 
 const NavAdmin = () => {
     const { data: session, status } = useSession()
-    const [state, setState] = React.useState(false)
+    const [state, setState] = useState(false)
 
     const menus = [
       { title: "Login", path: "/auth/signin" },
@@ -28,11 +28,11 @@ const NavAdmin = () => {
     ]
 
     return (
-        <nav className="bg-gray-300 w-full border-b md:border-0 max-w-screen">
+        <nav className=" bg-gray-300 sticky top-0 w-full border-b md:border-0 max-w-screen">
         <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:justify-between md:px-8">
-          <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <Link href="/dashboard">
-              <Image src="/images/logo.png" alt="logo" width={240} height={180} className="h-12 w-12" />
+          <div className="flex items-center justify-between  md:block">
+          <Link href="/" className=''>
+              <Image src="/images/logo.png" alt="logo" width={180} height={180} className="h-16 w-16 bg-white p-1" />
             </Link>
             <div className="md:hidden">
               
@@ -86,7 +86,7 @@ const NavAdmin = () => {
             </ul>
           </div>
           <div>
-          <ul className="justify-center items-center  space-y-8 md:flex md:space-x-6 md:space-y-0">
+          <ul className="justify-center items-center  space-y-4 md:flex md:space-x-6 md:space-y-0">
             {session && session.user?.image  ? (
                     <>  
           <DropdownMenu>
