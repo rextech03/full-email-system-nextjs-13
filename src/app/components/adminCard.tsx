@@ -15,9 +15,9 @@ export default function AdminCard( props: Props ) {
   return (
     <div className="max-w-md rounded overflow-hidden shadow-lg bg-white">
     <Image className="w-full" src={props.imagePath} alt={props.imageAlt} width={125} height={125} />
-    <div className="px-6 py-4">
+    <div className="px-6 py-4 min-w-40 h-32">
       <div className="font-bold text-xl mb-2 ">{props.title}</div>
-      <p className="text-gray-700 text-base w-20">
+      <p className="text-gray-700 text-base">
       {props.description.substring(0, 32)}
       </p>
     </div>

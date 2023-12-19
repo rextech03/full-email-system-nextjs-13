@@ -13,7 +13,7 @@ export default function page() {
     <div className="flex flex-wrap gap-2 justify-content-center items-center py-4 mx-auto">
 
         {/* card */}
-    <div className="w-full md:flex justify-items-center items-center bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800 ">
+    <div className="w-full md:flex justify-items-center items-center bg-slate-300 rounded-xl p-8 md:p-0 dark:bg-slate-800 ">
         <div className="p-8 rounded-full bg-black mx-4">
     <FaHammer className="text-white"/>
     </div>
@@ -28,14 +28,14 @@ export default function page() {
       Please check your inbox for an email titled “[Attention] Sign Phoenix Creed Disclaimer” or click the button below
       </div>
       <div className="text-slate-700 dark:text-slate-500 py-4">
-      <Link href={''} className="px-4 py-2 border-2 border-primary mr-4">Go Now</Link>
+      <Link href={''} className="px-4 py-2 border-2 rounded-xl border-primary mr-4">Go Now</Link>
       </div>
     </figcaption>
   </div>
 </div>
 
 
-<div className="w-full md:flex justify-items-center items-center bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800 ">
+<div className="w-full md:flex justify-items-center items-center bg-slate-300 rounded-xl p-8 md:p-0 dark:bg-slate-800 ">
         <div className="p-8 rounded-full bg-black mx-4">
     <FaRegHandshake  className="text-white"/>
     </div>
@@ -50,7 +50,7 @@ export default function page() {
       Please check your inbox for an email titled “[Attention] Sign Phoenix Creed Disclaimer” or click the button below
       </div> */}
       <div className="text-slate-700 dark:text-slate-500 py-4">
-      <Link href={''} className="px-4 py-2 border-2 border-primary mr-4">Go Now</Link>
+      <Link href={''} className="px-4 py-2 border-2 rounded-xl border-primary mr-4">Go Now</Link>
       </div>
     </figcaption>
   </div>
@@ -58,7 +58,7 @@ export default function page() {
 
       
 
-<div className="w-full md:flex justify-items-center items-center bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800 ">
+<div className="w-full md:flex justify-items-center items-center bg-slate-300 rounded-xl p-8 md:p-0 dark:bg-slate-800 ">
         <div className="p-8 rounded-full bg-black mx-4">
     <FaWhatsapp className="text-white"/>
     </div>
@@ -73,7 +73,7 @@ export default function page() {
       kindly Join our whatsapp group.
       </div>
       <div className="text-slate-700 dark:text-slate-500 py-4">
-      <Link href='https://chat.whatsapp.com/HJwKgkuugWULNcQm3JKIFv' className="px-4 py-2 border-2 border-primary mr-4">Go Now</Link>
+      <Link href='https://chat.whatsapp.com/HJwKgkuugWULNcQm3JKIFv' className="px-4 py-2 rounded-xl border-2 border-primary mr-4">Go Now</Link>
       </div>
     </figcaption>
   </div>
@@ -81,7 +81,7 @@ export default function page() {
 
      
 
-        <div className="w-1/2 md:flex justify-items-center items-center bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800 ">
+        <div className="w-1/2 md:flex justify-items-center items-center bg-slate-300 rounded-xl p-8 md:p-0 dark:bg-slate-800 ">
         <div className="p-8 rounded-full bg-black mx-4">
     <FaUsers className="text-white"/>
     </div>
@@ -96,14 +96,14 @@ export default function page() {
       kindly Join our whatsapp group.
       </div>
       <div className="text-slate-700 dark:text-slate-500 py-4">
-      <Link href={'/courses'} className="px-4 py-2 border-2 border-primary mr-4">Go Now</Link>
+      <Link href={'/courses'} className="px-4 py-2 rounded-xl border-2 border-primary mr-4">Go Now</Link>
       </div>
     </figcaption>
   </div>
 </div>
 
    
-<div className="w-1/3 md:flex justify-items-center items-center bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800 ">
+<div className="w-1/3 md:flex justify-items-center items-center bg-slate-300 rounded-xl p-8 md:p-0 dark:bg-slate-800 ">
         <div className="p-8 rounded-full bg-black mx-4">
     <FaAward className="text-white"/>
     </div>
@@ -118,7 +118,7 @@ export default function page() {
       kindly Join our whatsapp group.
       </div>
       <div className="text-slate-700 dark:text-slate-500 py-4">
-      <Link href={'/courses'} className="px-4 py-2 border-2 border-primary mr-4">Go Now</Link>
+      <Link href={'/courses'} className="px-4 py-2 rounded-xl border-2 border-primary mr-4">Go Now</Link>
       </div>
     </figcaption>
   </div>
