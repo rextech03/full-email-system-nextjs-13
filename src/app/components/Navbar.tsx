@@ -66,7 +66,7 @@ const Navbar = () => {
                 ) : (
                     <>
               {menus.map((item, idx) => (
-                <li key={idx} className="py-2 px-4 rounded bg-black text-white hover:text-black hover:border-2 hover:border-black hover:bg-white hover:py-2 hover:px-4 hover:rounded">
+                <li key={idx} className=" bg-black text-white hover:text-black hover:border-2 hover:border-black ">
                   <Link href={item.path}>{item.title}</Link>
                 </li>
               ))}
