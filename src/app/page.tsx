@@ -1,6 +1,6 @@
 "use client";
 import Banner from "../app/components/banner";
-import Card from "../app/components/card";
+import Cards from "../app/components/card";
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 
@@ -49,7 +49,7 @@ export default function Home() {
       
       {cardContent.map((item, idx) => (
      
-        <Card 
+        <Cards 
         key={idx} 
         imageAlt={item.imageAlt} 
         imagePath={item.imagePath} 
