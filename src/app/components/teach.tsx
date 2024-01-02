@@ -7,7 +7,7 @@ export default function WhatTeach() {
     <div className='container py-4'>
         
 
-        <h3 className=' ml-60 pb-4 text-5xl font-bold'>What We Teach</h3>
+        <h3 className=' ml-12 pb-4 text-5xl font-bold'>What We Teach</h3>
         <div className="flex bg-gray-200 rounded-lg relative ">
         
             
