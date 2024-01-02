@@ -2,18 +2,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-export default function AboutSection() {
+export default function WhatTeach() {
   return (
     <div className='container py-4'>
         
 
-        <h3 className='pl-60 ml-60 pb-4 text-5xl font-bold'>About Us</h3>
+        <h3 className=' ml-60 pb-4 text-5xl font-bold'>What We Teach</h3>
         <div className="flex bg-gray-200 rounded-lg relative ">
         
-            <div className="w-1/3 absolute bottom-0">
-                <Image src={'/images/phoenixlogo.png'} alt='Phoenix logo' width={224} height={224} className='w-96 h-96' />
-            </div>
-            <div className='ml-60 pl-56 py-12'>
+            
+            <div className='px-12 py-12'>
             
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     <br /> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br />
@@ -24,6 +22,10 @@ export default function AboutSection() {
                         Learn More
                 </Link>
                 </div>
+            </div>
+
+            <div className="w-1/3 absolute bottom-0 right-4 ml-60 pl-56">
+                <Image src={'/images/blackwoman.png'} alt='Phoenix logo' width={224} height={224} className='w-96 h-96' />
             </div>
         </div>
        

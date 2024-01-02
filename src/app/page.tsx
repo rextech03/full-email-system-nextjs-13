@@ -3,8 +3,11 @@ import Banner from "../app/components/banner";
 import Cards from "../app/components/card";
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
+import NewFooter from "./components/NewFooter";
 import AboutSection from "./components/about-section";
+import Gain from "./components/gain";
 import NewNavbar from "./components/newNavbar";
+import WhatTeach from "./components/teach";
 
 
 export default function Home() {
@@ -69,7 +72,12 @@ export default function Home() {
     </div>
 
     <AboutSection />
-    <Footer />
+
+    <WhatTeach />
+
+    <Gain />
+    
+    <NewFooter />
     </>
   )
 }
