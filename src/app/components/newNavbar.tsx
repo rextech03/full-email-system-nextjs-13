@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import { useState } from 'react';
 import { authOptions } from '../api/auth/[...nextauth]/route';
 // import { getServerSession } from 'next-auth/next';
 import { useSession } from "next-auth/react"
@@ -16,23 +16,28 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { FaArrowDown, FaAlignJustify } from "react-icons/fa";
 
-const Navbar = () => {
+const NewNavbar = () => {
     const { data: session, status } = useSession()
-    const [state, setState] = React.useState(false)
+    const [state, setState] = useState(false)
+
+    const pagesmenu = [
+        { title: "Who we are", path: "/about" },
+        { title: "What we Offer", path: "/services" },
+        { title: "What You Gain", path: "/offers" },
+        
+      ]
 
     const menus = [
       { title: "Login", path: "/auth/signin" },
-    //   { title: "Register", path: "/auth/signup" },
-      // { title: "About Us", path: "/your-path" },
-      // { title: "Contact Us", path: "/your-path" },
+   
     ]
 
     return (
-        <nav className="bg-gray-500 sticky top-0 w-full border-b md:border-0 max-w-screen">
+        <nav className="bg-white sticky top-0 w-full border-b md:border-0 max-w-screen h-12">
         <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:justify-between md:px-8 xl:px-1">
-          <div className="flex items-center justify-between static md:block">
-            <Link href="/" className='absolute'>
-              <Image src="/images/logo.png" alt="logo" width={180} height={180} className="h-32 w-32 bg-white p-1" />
+          <div className="flex items-center justify-between  md:block">
+            <Link href="/" className='absolute top-6'>
+              <Image src="/images/logo.png" alt="logo" width={180} height={180} className="h-32 w-32 motion-safe:animate-pulse" />
             </Link>
             <div className="md:hidden">
               
@@ -45,10 +50,17 @@ const Navbar = () => {
             </div>
           </div>
           <div
-            className={`flex justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-              state ? "block" : "hidden"
-            }`}
+            className={`text-center max-sm:h-screen max-sm:flex-col max-sm:space-y-8 max-sm:place-items-center  md:flex md:justify-between   md:w-3/4 pb-3 mt-4 md:pb-0    ${
+                state ? "block" : "hidden"
+              }`}
           >
+            <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+            {pagesmenu.map((item, idx) => (
+                <li key={idx} className="  text-black ">
+                  <Link href={item.path}>{item.title}</Link>
+                </li>
+              ))}
+            </ul>
             <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
             {session && session.user?.email ? (
                     <>
@@ -66,7 +78,7 @@ const Navbar = () => {
                 ) : (
                     <>
               {menus.map((item, idx) => (
-                <li key={idx} className=" bg-black text-white hover:text-black hover:border-2 hover:border-black ">
+                <li key={idx} className=" text-black ">
                   <Link href={item.path}>{item.title}</Link>
                 </li>
               ))}
@@ -99,4 +111,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default NewNavbar;

@@ -5,8 +5,8 @@ export default function Banner() {
  
 
   return (
-    <div className="bg-black h-2/3 " style={{ 
-        backgroundImage: `url(/images/banner.jpeg)`, 
+    <div className="bg-black " style={{ 
+        backgroundImage: `url(/images/banner.jpg)`, 
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
@@ -15,7 +15,7 @@ export default function Banner() {
         >
         
   
-        <div className=" h-[34rem] w-full grid place-items-center lg:h-[52rem]">
+        <div className=" h-[34rem] w-full grid place-items-center lg:h-[46rem]">
           
           <div className="m-auto max-w-5xl py-12 sm:py-8 lg:py-2 px-16  rounded bg-transparent">
             
@@ -36,8 +36,11 @@ export default function Banner() {
                >
               <p className="mt-6 text-lg leading-8 font-semibold ">
               Welcome to Phoenix creed academy
+              <br/>
               where you get the best knowledge to make money online
+              <br />
               by exhibiting a pro founded Technical analysis skills
+              <br />
               set that can bring you money from home.
               </p>
               </motion.div>
@@ -47,8 +50,9 @@ export default function Banner() {
                initial={{ opacity: 0  }}
                animate={{ opacity: 1 }}
                >
-                <a href="https://paystack.com/pay/accesscourses" className="py-2 px-4 rounded-full bg-black text-white hover:text-black hover:border-2 hover:border-black hover:bg-white hover:py-2 hover:px-4 hover:rounded-full">
-                Get started <span aria-hidden="true">→</span>
+                <a href="https://paystack.com/pay/accesscourses" className="py-4 px-12 rounded-full bg-white text-black">
+                Get started
+                 {/* <span aria-hidden="true">→</span> */}
                 </a>
                 </motion.div>
                 
