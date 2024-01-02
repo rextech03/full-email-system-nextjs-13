@@ -26,14 +26,14 @@ export default function NewFooter() {
 
   return (
     <div className='bg-blue-800 '>
-        <div className="flex justify-between items-center  p-12 mx-auto text-white">
-            <div>
+        <div className="md:flex md:justify-between items-center text-center  p-12 mx-auto text-white">
+            <div className='grid place-items-center'>
                 <Image src={'/images/logo.png'} alt='logo' width={124} height={124} className='h-32 w-32' />
             </div>
 
-            <div>
+            <div className='max-sm:grid max-sm:place-items-center max-sm:py-2'>
                 <h4 className='font-bold text-xl'>Shop</h4>
-                <ul className="justify-center items-center space-y-8 md:flex-col  md:space-y-0">
+                <ul className="justify-center items-center space-y-4 md:flex-col  md:space-y-0">
             {shopmenu.map((item, idx) => (
                 <li key={idx} className="  text-white ">
                   <Link href={item.path}>{item.title}</Link>
@@ -42,9 +42,9 @@ export default function NewFooter() {
             </ul>
             </div>
 
-            <div>
+            <div className='max-sm:grid max-sm:place-items-center max-sm:py-2'>
                 <h4 className='font-bold text-xl'>About Us</h4>
-                <ul className="justify-center items-center space-y-8 md:flex-col  md:space-y-0">
+                <ul className="justify-center items-center space-y-4 md:flex-col  md:space-y-0">
             {aboutmenu.map((item, idx) => (
                 <li key={idx} className="  text-white ">
                   <Link href={item.path}>{item.title}</Link>
@@ -53,13 +53,13 @@ export default function NewFooter() {
             </ul>
             </div>
 
-            <div>
+            <div className='max-sm:grid max-sm:place-items-center items-center text-center max-sm:py-2'>
                 <h4 className='font-bold text-xl'>Contact Us</h4>
                 <ul className="justify-center items-center space-y-8 md:flex-col  md:space-y-0">
-                    <li className='flex text-white'><FaMailBulk />
+                    <li className='flex text-white justify-center'><FaMailBulk />
                     <a href='mailto:phoenixcreedacamedy@gmail.com' className='px-4'>phoenixcreedacamedy@gmail.com</a>
                     </li>
-                    <li className='flex text-white'><FaPhone />
+                    <li className='flex text-white justify-center'><FaPhone />
                     <a href='' className='px-4'>0123171895</a>
                     </li>
             {/* {contactmenu.map((item, idx) => (
@@ -69,7 +69,7 @@ export default function NewFooter() {
                   <Link href={item.path}>{item.title}</Link>
                 </li>
               ))} */}
-              <div className="flex py-2 space-x-8">
+              <div className="flex py-2 space-x-8 justify-center">
                 <FaFacebook />
                 <FaInstagram />
                 <FaWhatsapp />
