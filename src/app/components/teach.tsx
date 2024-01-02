@@ -24,8 +24,8 @@ export default function WhatTeach() {
                 </div>
             </div>
 
-            <div className="-top-12 md:w-1/3 absolute md:bottom-0 md:right-4 md:ml-60 md:pl-56">
-                <Image src={'/images/blackwoman.png'} alt='Phoenix logo' width={224} height={224} className='w-60 h-60 md:w-96 md:h-[28rem]' />
+            <div className="max-sm:-top-12 md:w-1/3 absolute md:bottom-0 md:right-4 md:ml-60 md:pl-56">
+                <Image src={'/images/blackwoman.png'} alt='Phoenix logo' width={224} height={224} className='w-60 h-60 md:w-[28rem] md:h-[28rem]' />
             </div>
         </div>
        
