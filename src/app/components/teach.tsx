@@ -25,7 +25,7 @@ export default function WhatTeach() {
             </div>
 
             <div className="w-1/3 absolute bottom-0 right-4 ml-60 pl-56">
-                <Image src={'/images/blackwoman.png'} alt='Phoenix logo' width={224} height={224} className='w-96 h-96' />
+                <Image src={'/images/blackwoman.png'} alt='Phoenix logo' width={324} height={324} className='w-96 h-[28rem]' />
             </div>
         </div>
        
