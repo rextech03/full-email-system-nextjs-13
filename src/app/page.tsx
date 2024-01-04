@@ -71,11 +71,13 @@ export default function Home() {
     
     </div>
 
+        <div className="space-y-20">
     <AboutSection />
 
     <WhatTeach />
 
     <Gain />
+    </div>
     
     <NewFooter />
     </>
