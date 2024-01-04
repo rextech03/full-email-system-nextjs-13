@@ -17,14 +17,14 @@ export default function WhatTeach() {
                     <br /> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br />
                 Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt. Id donec ultrices.</p>
                     
-                <div className="py-12">
+                <div className="py-4 md:py-12">
                     <Link href="/" className="py-4 px-12 rounded-full bg-blue-800 text-white">
                         Learn More
                 </Link>
                 </div>
             </div>
 
-            <div className="max-sm:-top-12 md:w-1/2 absolute md:bottom-0 md:right-4 md:ml-60 md:pl-56">
+            <div className="max-sm:-top-12 max-sm:right-4 md:w-1/2 absolute md:bottom-0 md:right-4 md:ml-60 md:pl-56">
                 <Image src={'/images/blackwoman.png'} alt='Phoenix logo' width={320} height={320} className='w-60 h-60 md:w-[72rem] md:h-[32rem]' />
             </div>
         </div>

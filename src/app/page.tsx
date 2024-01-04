@@ -50,7 +50,7 @@ export default function Home() {
       <h3 className="pt-8 text-5xl font-bold text-center">Online Course</h3>
       <div className="h-full  w-full flex justify-center items-center">
 
-      <div className=" w-full px-4  my-4 md:flex justify-between">
+      <div className=" w-full px-4  my-4 md:flex md:justify-between md:px-12">
       
       {cardContent.map((item, idx) => (
      
@@ -72,6 +72,7 @@ export default function Home() {
     </div>
 
         <div className="space-y-20">
+          
     <AboutSection />
 
     <WhatTeach />

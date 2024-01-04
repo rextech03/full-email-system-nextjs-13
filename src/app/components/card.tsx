@@ -67,12 +67,12 @@ export default function Cards( props: Props ) {
 
 
 <div className="container max-w-screen-xl mx-auto ">
-    <Card className="max-sm:w-full max-sm:h-[440px] max-md:w-[150px] max-lg:w-[180px] max-lg:h-[600px] max-xl:w-[250px] max-xl:h-[500px] max-2xl:w-[350px]">
+    <Card className="max-sm:w-full max-sm:h-[520px] max-md:w-[150px] md:h-[560px] max-lg:w-[180px] max-lg:h-[600px] max-xl:w-[250px] max-xl:h-[500px] max-2xl:w-[350px]">
     <Image className="w-full h-60" src={props.imagePath} alt={props.imageAlt} width={125} height={125}  />
       <CardHeader>
         <CardTitle className='sm:h-20 lg:h-12 text-center'> {props.title}
         </CardTitle>
-        <CardDescription className='sm:h-40 md:h-48 lg:h-32'>{props.description}</CardDescription>
+        <CardDescription className='sm:h-40 text-center  md:h-48 lg:h-32'>{props.description}</CardDescription>
       </CardHeader>
       <CardContent>
        

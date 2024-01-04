@@ -22,12 +22,14 @@ export default function Gain() {
                 <Image src={'/images/profit.png'} alt='Phoenix logo' width={224} height={224} className='w-72 h-72 md:w-96 md:h-96 xl:w-80 xl:h-80'  />
             </div>
 
-            <Carousel className="text-justify justify-end max-sm:pt-60 ml-96  md:py-12 md:w-1/2  xl:ml-[462px] ">
+            <Carousel 
+            className="text-justify justify-end max-sm:w-2/3 max-sm:mx-auto max-sm:items-center max-sm:pt-60 md:ml-96  md:py-12 md:w-1/2  xl:ml-[462px] "
+            >
       <CarouselContent>
         {Array.from({ length: 5 }).map((_, index) => (
           <CarouselItem key={index}>
             <div className="  p-1">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            <p className="max-sm:text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     <br /> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br />
                 Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt. Id donec ultrices.</p>
                     
