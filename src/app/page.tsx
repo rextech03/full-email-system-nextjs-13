@@ -77,9 +77,10 @@ export default function Home() {
     <WhatTeach />
 
     <Gain />
-    </div>
+    
     
     <NewFooter />
+    </div>
     </>
   )
 }
