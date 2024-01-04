@@ -15,7 +15,7 @@ export default function Home() {
   // console.log(session);
   const cardContent = [
     { 
-      imagePath: "/images/chart.jpg",
+      imagePath: "/images/coin.png",
       imageAlt: "learn forex",
       title: "Forex Mastery Course", 
       description: "Learn high technical analysis skills that would enable you extract money from the market with Confidence with our well curated mastery course.", 
@@ -24,7 +24,7 @@ export default function Home() {
       amount: "N350,000.00"
     },
     {
-      imagePath: "/images/chart.jpg",
+      imagePath: "/images/finance.png",
       imageAlt: "learn forex",
       title: "PCA NoteBook", 
       description: `Purchase our PCA notebook so as to understand in details what’s you’ve been taught and also widen your  knowledge in the forex market.`, 
@@ -33,7 +33,7 @@ export default function Home() {
       amount: "N100,000.00"
   },
   {
-    imagePath: "/images/chart.jpg",
+    imagePath: "/images/analysis.png",
     imageAlt: "Private Mentorship",
     title: "Private Mentorship", 
     description: "Get the chance to learn with Phoenix privately in his daily session this will best help you concentrate more and tune up your skill in no time and at your pace.", 
