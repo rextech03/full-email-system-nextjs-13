@@ -21,9 +21,9 @@ const NewNavbar = () => {
     const [state, setState] = useState(false)
 
     const pagesmenu = [
-        { title: "Who we are", path: "/about" },
-        { title: "What we Offer", path: "/services" },
-        { title: "What You Gain", path: "/offers" },
+        { title: "Who we are", path: "#about" },
+        { title: "What we Offer", path: "#what" },
+        { title: "What You Gain", path: "#gain" },
         
       ]
 

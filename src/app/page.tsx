@@ -46,7 +46,10 @@ export default function Home() {
   return (
     <>
      <NewNavbar />
+     <section id="banner">
       <Banner />
+</section>
+      <section id="card">
       <h3 className="pt-8 text-5xl font-bold text-center">Online Course</h3>
       <div className="h-full  w-full flex justify-center items-center">
 
@@ -70,15 +73,19 @@ export default function Home() {
     </div>
     
     </div>
-
+</section>
         <div className="space-y-20">
-          
+        <section id="about">
     <AboutSection />
+        </section>
 
+        <section id="what">
     <WhatTeach />
+        </section>
 
+        <section id="gain">
     <Gain />
-    
+    </section>
     
     <NewFooter />
     </div>
