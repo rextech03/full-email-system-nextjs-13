@@ -27,7 +27,7 @@ export default function NewFooter() {
   return (
     <div className='bg-blue-800 '>
         <div className="md:flex md:justify-between max-sm:items-center max-sm:text-start max-sm:p-4 md:p-12 mx-auto text-white">
-          <div className='flex justify-between space-x-4'>
+          <div className='flex justify-between space-x-4 md:w-1/2'>
             <div className='grid place-items-center'>
                 <Image src={'/images/logo.png'} alt='logo' width={124} height={124} className='h-32 w-32' />
             </div>
@@ -44,7 +44,7 @@ export default function NewFooter() {
             </div>
             </div>
 
-<div className="flex justify-between">
+<div className="flex justify-between md:space-x-4 md:w-1/2 md:pl-8">
             <div className='max-sm:grid max-sm:place-items-start max-sm:py-2'>
                 <h4 className='font-bold text-xl'>About Us</h4>
                 <ul className="max-sm:justify-center max-sm:items-center space-y-4 md:flex-col  md:space-y-0">

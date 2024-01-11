@@ -105,10 +105,10 @@ const SignInForm = () => {
             <Card>
               <CardHeader className="space-y-1">
                 <CardTitle className="text-2xl text-center">
-                  Create an account
+                  Login to your account
                 </CardTitle>
                 <CardDescription className="text-center">
-                  Enter your email and password to sign up
+                  Enter your email and password to sign in
                 </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-4">
