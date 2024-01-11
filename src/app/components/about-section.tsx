@@ -13,7 +13,7 @@ export default function AboutSection() {
             <div className="-top-20 md:w-1/3 absolute md:bottom-0 ">
                 <Image src={'/images/phoenixlogo.png'} alt='Phoenix logo' width={224} height={224} className='w-72 h-72 md:w-96 md:h-96' />
             </div>
-            <div className='max-sm:pt-60 md:ml-60 md:pl-56 md:py-12 text-justify'>
+            <div className='max-sm:pt-60 max-sm:px-4 md:ml-60 md:pl-56 md:py-12 text-justify'>
             
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     <br /> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br />

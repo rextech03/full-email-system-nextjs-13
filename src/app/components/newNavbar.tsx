@@ -35,10 +35,10 @@ const NewNavbar = () => {
     return (
         <nav className="bg-white sticky top-0 w-full border-b md:border-0 max-w-screen h-12 z-50">
         <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:justify-between md:px-8 xl:px-1">
-          <div className="flex items-center justify-between  md:block">
-            <div className='md:hidden'></div>
-            <Link href="/" className='absolute top-6 max-sm:left-[124px]'>
-              <Image src="/images/logo.png" alt="logo" width={180} height={180} className="h-32 w-32 motion-safe:animate-pulse" />
+         <div className="flex items-center justify-end  md:block">
+            {/* <div className='md:hidden'></div> */}
+            <Link href="/" className='absolute top-6 max-sm:right-[154px]'>
+              <Image src="/images/logo.png" alt="logo" width={180} height={180} className="max-sm:w-16 max-sm:h-16 h-32 w-32 motion-safe:animate-pulse" />
             </Link>
             <div className="md:hidden">
               
@@ -51,17 +51,19 @@ const NewNavbar = () => {
             </div>
           </div>
           <div
-            className={`text-center max-sm:h-screen max-sm:flex-col max-sm:space-y-8 max-sm:place-items-center  md:flex md:justify-between   md:w-3/4 pb-3 mt-4 md:pb-0    ${
+            className={`text-center max-sm:h-screen max-sm:flex-col max-sm:space-y-8 max-sm:place-items-center  md:flex md:justify-between   md:w-full pb-3 mt-4 md:pb-0    ${
                 state ? "block" : "hidden"
               }`}
           >
+            <div className='max-sm:hidden'></div>
             <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
             {pagesmenu.map((item, idx) => (
-                <li key={idx} className="  text-black ">
+                <li key={idx} className="text-black ">
                   <Link href={item.path}>{item.title}</Link>
                 </li>
               ))}
             </ul>
+            
             <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
             {session && session.user?.email ? (
                     <>
