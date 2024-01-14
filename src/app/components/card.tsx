@@ -67,7 +67,7 @@ export default function Cards( props: Props ) {
 
 
 <div className=" max-w-screen-xl mx-auto ">
-<a href={props.path} className='drop-shadow-lg'
+<a href={props.path} className='drop-shadow-sm hover:drop-shadow-lg'
 // className="px-4 py-2 bg-gray-200 rounded-full text-sm font-semibold text-gray-700 "
 >
     <Card className="sm:w-full rounded-t-2xl max-sm:w-full max-sm:h-[400px] max-md:w-[150px] md:h-[470px] max-lg:w-[350px] max-lg:h-[540px] max-xl:w-[250px] max-xl:h-[50px] max-2xl:w-[320px] max-2xl:h-[570px] 2xl:w-[320px] 2xl:h-[480px]">
@@ -75,11 +75,11 @@ export default function Cards( props: Props ) {
       <CardHeader>
         <CardTitle className='max-sm:h-14 md:h-12 lg:h-20 max-lg:h-28 xl:h-14 text-center'> {props.title}
         </CardTitle>
-        <CardDescription className='text-center sm:h-40 md:h-32  max-md:h-20 lg:h-36  max-lg:h-20 xl:h-24'>{props.description}</CardDescription>
-      </CardHeader>
-      {/* <CardContent className=''>
+        <CardDescription className='text-center sm:h-40 md:h-32    max-md:h-20 lg:h-20  max-lg:h-20 xl:h-24'>{props.description}</CardDescription>
+      </CardHeader >
+      <CardContent className='md:w-48 lg:w-64'>
       
-      </CardContent> */}
+      </CardContent>
       <CardFooter className='justify-center'
       // className="max-sm:flex-col xl:flex sm:space-y-2 md:flex justify-between"
       >

@@ -18,7 +18,7 @@ export default function WhatTeach() {
                 Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt. Id donec ultrices.</p>
                     
                 <div className="py-4 md:py-12">
-                    <Link href="/" className="py-4 px-12 rounded-full bg-blue-800 text-white">
+                    <Link href="/" className="py-4 px-12 rounded-full bg-blue-800 text-white  hover:bg-black">
                         Learn More
                 </Link>
                 </div>
