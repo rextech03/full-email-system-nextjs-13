@@ -67,7 +67,7 @@ export default function Cards( props: Props ) {
 
 
 <div className=" max-w-screen-xl mx-auto ">
-<a href={props.path} 
+<a href={props.path} className='drop-shadow-lg'
 // className="px-4 py-2 bg-gray-200 rounded-full text-sm font-semibold text-gray-700 "
 >
     <Card className="sm:w-full rounded-t-2xl max-sm:w-full max-sm:h-[400px] max-md:w-[150px] md:h-[470px] max-lg:w-[350px] max-lg:h-[540px] max-xl:w-[250px] max-xl:h-[50px] max-2xl:w-[320px] max-2xl:h-[570px] 2xl:w-[320px] 2xl:h-[480px]">

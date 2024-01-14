@@ -32,7 +32,7 @@ export default function NewFooter() {
                 <Image src={'/images/logo.png'} alt='logo' width={124} height={124} className='h-32 w-32' />
             </div>
 
-            <div className='max-sm:grid max-sm:place-items-start max-sm:py-2'>
+            <div className='max-sm:grid max-sm:place-items-start max-sm:py-2 md:pr-12'>
                 <h4 className='font-bold text-xl'>Shop</h4>
                 <ul className="max-sm:justify-center max-sm:items-center md:items-start space-y-4 md:flex-col  md:space-y-0">
             {shopmenu.map((item, idx) => (
@@ -44,7 +44,7 @@ export default function NewFooter() {
             </div>
             </div>
 
-<div className="flex justify-between md:space-x-4 md:w-1/2 md:pl-8">
+<div className="flex justify-between md:space-x-4 md:w-1/2 md:pl-12">
             <div className='max-sm:grid max-sm:place-items-start max-sm:py-2'>
                 <h4 className='font-bold text-xl'>About Us</h4>
                 <ul className="max-sm:justify-center max-sm:items-center space-y-4 md:flex-col  md:space-y-0">

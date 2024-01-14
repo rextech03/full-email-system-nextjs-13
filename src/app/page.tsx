@@ -21,7 +21,7 @@ export default function Home() {
       description: "Learn high technical analysis skills that would enable you extract money from the market with Confidence with our well curated mastery course.", 
       buttonText: "Enroll",
       path: "https://paystack.com/pay/accesscourses", 
-      amount: "N350,000.00"
+      amount: "$350"
     },
     {
       imagePath: "/images/finance.png",
@@ -30,7 +30,7 @@ export default function Home() {
       description: `Purchase our PCA notebook so as to understand in details what’s you’ve been taught and also widen your  knowledge in the forex market.`, 
       buttonText: "Buy Now",
       path: "https://paystack.com/pay/materialsaccess", 
-      amount: "N100,000.00"
+      amount: "$100"
   },
   {
     imagePath: "/images/analysis.png",
@@ -39,7 +39,7 @@ export default function Home() {
     description: "Get the chance to learn with Phoenix privately in his daily session this will best help you concentrate more and tune up your skill in no time and at your pace.", 
     buttonText: "Enroll",
     path: "https://paystack.com/pay/vipsection",
-    amount: "N500,000.00"
+    amount: "$500"
 },
   ]
    
