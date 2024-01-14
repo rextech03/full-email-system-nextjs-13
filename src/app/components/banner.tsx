@@ -49,7 +49,7 @@ export default function Banner() {
                initial={{ opacity: 0  }}
                animate={{ opacity: 1 }}
                >
-                <a href="https://paystack.com/pay/accesscourses" className="py-4 px-12 rounded-full bg-white text-black">
+                <a href="https://paystack.com/pay/accesscourses" className="py-4 px-12 rounded-full bg-white text-black font-bold hover:text-white hover:bg-black">
                 Get started
                  {/* <span aria-hidden="true">→</span> */}
                 </a>
