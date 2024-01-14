@@ -70,12 +70,12 @@ export default function Cards( props: Props ) {
 <a href={props.path} 
 // className="px-4 py-2 bg-gray-200 rounded-full text-sm font-semibold text-gray-700 "
 >
-    <Card className="rounded-t-2xl max-sm:w-full max-sm:h-[536px] max-md:w-[150px] md:h-[400px] max-lg:w-[250px] max-lg:h-[500px] max-xl:w-[250px] max-xl:h-[50px] max-2xl:w-[320px] max-2xl:h-[570px] 2xl:w-[320px] 2xl:h-[570px]">
+    <Card className="sm:w-full rounded-t-2xl max-sm:w-full max-sm:h-[400px] max-md:w-[150px] md:h-[470px] max-lg:w-[350px] max-lg:h-[540px] max-xl:w-[250px] max-xl:h-[50px] max-2xl:w-[320px] max-2xl:h-[570px] 2xl:w-[320px] 2xl:h-[570px]">
     <Image className="w-full h-40 rounded-t-2xl" src={props.imagePath} alt={props.imageAlt} width={125} height={125}  />
       <CardHeader>
-        <CardTitle className='max-sm:h-20 md:h-12 max-lg:h-12 text-center'> {props.title}
+        <CardTitle className='max-sm:h-14 md:h-12 lg:h-20 max-lg:h-28 text-center'> {props.title}
         </CardTitle>
-        <CardDescription className='text-center sm:h-40 md:h-24 max-md:h-20  max-lg:h-20'>{props.description}</CardDescription>
+        <CardDescription className='text-center sm:h-40 md:h-32  max-md:h-20 lg:h-36  max-lg:h-20'>{props.description}</CardDescription>
       </CardHeader>
       {/* <CardContent className=''>
       
