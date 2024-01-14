@@ -10,10 +10,10 @@ export default function AboutSection() {
         <h3 className=' max-sm:pb-20 max-sm:text-center  md:pl-32 md:ml-60 md:pb-4 text-5xl font-bold'>About Us</h3>
         <div className="md:flex bg-gray-200 rounded-lg relative ">
         
-            <div className="max-sm:-top-20 md:w-1/3 lg:w-1/4 absolute md:bottom-0 lg:-top-28 lg:left-8 ">
-                <Image src={'/images/phoenixlogo.png'} alt='Phoenix logo' width={224} height={224} className='w-72 h-72 md:w-96 md:h-96' />
+            <div className="max-sm:-top-28 md:w-1/3 lg:w-1/4 absolute md:bottom-0 lg:-top-32 lg:left-8 ">
+                <Image src={'/images/phoenixlogo.png'} alt='Phoenix logo' width={224} height={224} className='w-72 h-72 md:w-52 md:h-96' />
             </div>
-            <div className='max-sm:pt-60 max-sm:px-4 md:ml-56 md:px-12 md:py-12 lg:w-3/4 lg:pl-32 text-justify'>
+            <div className='max-sm:pt-60 max-sm:px-4 md:ml-56 md:px-12 md:py-12 lg:w-3/4 lg:pl-32 text-justify md:h-64'>
             
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     <br /> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br />

@@ -11,7 +11,7 @@ export default function WhatTeach() {
         <div className="flex bg-gray-200 rounded-lg relative ">
         
             
-            <div className='px-12 py-12 max-sm:pt-60'>
+            <div className='px-12 py-12 max-sm:pt-60 md:h-64'>
             
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     <br /> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br />
