@@ -58,7 +58,7 @@ export default function Cards( props: Props ) {
             <div className="px-6 py-4  flex items-center justify-between">
        <div> <a href={props.path} className="px-4 py-2 bg-gray-200 rounded-full text-sm font-semibold text-gray-700 ">{props.buttonText}</a></div>
       <div><p className='text-sm'>{props.amount}</p></div>
-      
+      max-sm:w-full max-sm:h-[536px] max-md:w-[150px] md:h-[560px] max-lg:w-[150px] max-lg:h-[600px] 
      </div>
      </div>
         </div> */}
@@ -66,13 +66,13 @@ export default function Cards( props: Props ) {
 
 
 
-<div className="container max-w-screen-xl mx-auto ">
-    <Card className="max-sm:w-full max-sm:h-[536px] max-md:w-[150px] md:h-[560px] max-lg:w-[180px] max-lg:h-[600px] max-xl:w-[250px] max-xl:h-[500px] max-2xl:w-[350px]">
+<div className=" max-w-screen-xl mx-auto ">
+    <Card className="max-xl:w-[150px] max-xl:h-[50px] max-2xl:w-[320px] max-2xl:h-[570px] 2xl:w-[320px] 2xl:h-[570px]">
     <Image className="w-full h-60" src={props.imagePath} alt={props.imageAlt} width={125} height={125}  />
       <CardHeader>
         <CardTitle className='sm:h-20 lg:h-12 text-center'> {props.title}
         </CardTitle>
-        <CardDescription className='sm:h-40 text-center  md:h-48 lg:h-32'>{props.description}</CardDescription>
+        <CardDescription className='sm:h-40 text-center  md:h-48 lg:h-28 max-lg:h-20'>{props.description}</CardDescription>
       </CardHeader>
       <CardContent>
        

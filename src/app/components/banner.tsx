@@ -34,14 +34,13 @@ export default function Banner() {
                initial={{ opacity: 0, x: 300 }}
                animate={{ opacity: 1, x: 0 }}
                >
-              <p className="mt-6 text-lg leading-8 font-semibold ">
-              Welcome to Phoenix creed academy
+              <p className="mt-6  leading-8  ">
+              Welcome to Phoenix creed academy, where you get the best knowledge
               <br/>
-              where you get the best knowledge to make money online
+              to make money online by exhibiting a profound Technical analysis
               <br />
-              by exhibiting a pro founded Technical analysis skills
-              <br />
-              set that can bring you money from home.
+              skills set that can bring you money from home.
+              
               </p>
               </motion.div>
               

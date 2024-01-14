@@ -51,9 +51,9 @@ export default function Home() {
 </section>
       <section id="card">
       <h3 className="pt-8 text-5xl font-bold text-center">Online Course</h3>
-      <div className="h-full  w-full flex justify-center items-center">
+      <div className="h-full w-full max-sm:px-2 lg:3/4 lg:px-28 flex justify-center items-center">
 
-      <div className=" w-full px-4  my-4 md:flex md:justify-between md:px-12">
+      <div className=" w-full px-4  my-4 md:flex md:justify-between lg:px-20 gap-8 max-2xl:px-96 2xl:px-60 ">
       
       {cardContent.map((item, idx) => (
      
