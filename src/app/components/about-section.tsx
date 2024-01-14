@@ -10,7 +10,7 @@ export default function AboutSection() {
         <h3 className=' max-sm:pb-20 max-sm:text-center  md:pl-60 md:ml-60 md:pb-4 text-5xl font-bold'>About Us</h3>
         <div className="md:flex bg-gray-200 rounded-lg relative ">
         
-            <div className="-top-20 md:w-1/3 absolute md:bottom-0 ">
+            <div className="max-sm:-top-20 md:w-1/3 xl:w-1/4 absolute md:bottom-0 lg:-top-28 lg:left-8 ">
                 <Image src={'/images/phoenixlogo.png'} alt='Phoenix logo' width={224} height={224} className='w-72 h-72 md:w-96 md:h-96' />
             </div>
             <div className='max-sm:pt-60 max-sm:px-4 md:ml-60 md:pl-56 md:py-12 text-justify'>
