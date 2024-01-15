@@ -19,7 +19,7 @@ export  default async function page() {
   return (
     
     <div className="min-h-screen w-screen">
-    <div className="bg-[url('/images/book.jpg')] ">
+    <div className="bg-[url('/images/book.jpg')] bg-cover">
       
     <div className="py-4 mx-5" > 
     <h4 className="text-5xl font-bold my-4 text-white font-weight-bold">Latest Content</h4>

@@ -108,17 +108,17 @@ const SignInForm = () => {
                   Login to your account
                 </CardTitle>
                 <CardDescription className="text-center">
-                  Enter your email and password to sign in
+                  Enter your email and password to log in
                 </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-4">
                 
                 <div className="grid gap-2">
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="email">Email:</Label>
                   <Input id="email" type="email" placeholder="" onChange={(e) => setEmail(e.target.value)}/>
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password">Password:</Label>
                   <Input id="password" type="password" onChange={(e) => setPassword(e.target.value)}/>
                 </div>
                 
@@ -132,8 +132,8 @@ const SignInForm = () => {
               </CardContent>
               <CardFooter className="flex flex-col">
                 <Button className="w-full" onClick={handleSubmit}> {isLoading ? <div className='flex justify-items-center items-center gap-2'>
-                      <FaSpinner className="animate-spin"  /> <p>Signing Up</p>
-                     </div> :  "Sign Up"}</Button>
+                      <FaSpinner className="animate-spin"  /> <p>Signing In</p>
+                     </div> :  "Sign In"}</Button>
                 <p className="mt-2 text-xs text-center text-gray-700">
                   {" "}
                   Already have an account?{" "}

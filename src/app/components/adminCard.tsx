@@ -1,5 +1,13 @@
 import Image from 'next/image'
 import React from 'react'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 
 interface Props {
   imagePath:string,
@@ -13,17 +21,18 @@ interface Props {
 export default function AdminCard( props: Props ) {
   
   return (
-    <div className="max-w-md rounded overflow-hidden shadow-lg bg-white">
-    <Image className="w-full" src={props.imagePath} alt={props.imageAlt} width={125} height={125} />
-    <div className="px-6 py-4 min-w-40 h-32">
-      <div className="font-bold text-xl mb-2 ">{props.title}</div>
-      <p className="text-gray-700 text-base">
-      {props.description.substring(0, 32)}
-      </p>
-    </div>
-    <div className="px-6 pt-4 pb-2">
+    <Card className="max-w-md rounded overflow-hidden shadow-lg bg-white">
+    <Image className="w-full h-40" src={props.imagePath} alt={props.imageAlt} width={125} height={125} />
+    <CardHeader className="px-6 py-4 min-w-40 h-32">
+      <CardTitle className="font-bold text-xl mb-2 ">{props.title}</CardTitle>
+      <CardDescription className="text-gray-700 text-base ">
+      <p>{props.description.substring(0, 32)}</p>
+      </CardDescription>
+    </CardHeader>
+    <CardContent className='md:w-40 lg:w-56'></CardContent>
+    <CardFooter className="px-6 py-2">
       <a href={props.path} className="inline-block bg-gray-800 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">{props.buttonText}</a>
-    </div>
-  </div>
+    </CardFooter>
+  </Card>
   )
 }

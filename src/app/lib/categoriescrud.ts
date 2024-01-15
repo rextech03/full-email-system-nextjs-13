@@ -79,7 +79,7 @@ export const deleteCategory = async (id:string) => {
 };
 
 export const uploadImage = async ( uploadData:uploadData) => {
-  console.log(uploadData);
+  // console.log(uploadData);
   try {
     await prisma.category.update({ where: { id: uploadData.id }, data: uploadData });
     return { category: uploadData };
