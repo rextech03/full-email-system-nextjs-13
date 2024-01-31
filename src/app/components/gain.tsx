@@ -18,8 +18,8 @@ export default function Gain() {
         <h3 className='max-sm:pb-20 max-sm:text-center md:pl-60 md:ml-60 pb-4 text-5xl font-bold'>What you Gain</h3>
         <div className="flex bg-gray-200 rounded-lg relative ">
         
-            <div className="max-sm:-top-20 xl:-top-28 md:w-1/3 absolute md:bottom-0">
-                <Image src={'/images/profit.png'} alt='Phoenix logo' width={224} height={224} className='w-72 h-72 md:w-96 md:h-96 xl:w-80 xl:h-80'  />
+            <div className="max-sm:-top-20 xl:-top-32 md:w-1/3 absolute md:bottom-0">
+                <Image src={'/images/profit.png'} alt='Phoenix logo' width={224} height={224} className='w-72 h-80 md:w-96 md:h-96 xl:w-80 xl:h-96'  />
             </div>
 
             <Carousel 

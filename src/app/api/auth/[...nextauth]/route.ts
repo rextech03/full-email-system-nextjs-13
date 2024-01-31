@@ -90,6 +90,7 @@ export const authOptions: AuthOptions = {
                 params.session.user.email = params.token.email as string;
                 params.session.user.image = params.token.profileImage as string;
                 params.session.user.role = params.token.role as UserRole;
+                params.session.user.created_at = params.token.createdAt as string;
             }
 
             return params.session;

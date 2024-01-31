@@ -1,7 +1,14 @@
 
 import { getPosts } from "../../lib/tutorialscrud";
 import { getCategories } from "../../lib/categoriescrud";
-import AdminCard from "@/app/components/adminCard";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Button } from "@/components/ui/button";
+import TabProfile from "@/app/components/tabs/profile";
+import OrdersTab from "@/app/components/tabs/orders";
+import DownloadsTab from "@/app/components/tabs/downloads";
+import PaymentsTab from "@/app/components/tabs/payments";
+
+// import AdminCard from "@/app/components/adminCard";
 // import { getServerSession } from "next-auth";
 // import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
@@ -18,8 +25,27 @@ export  default async function page() {
 
   return (
     
-    <div className="min-h-screen w-screen">
-    <div className="bg-[url('/images/book.jpg')] bg-cover">
+    <div className="min-h-screen w-full">
+
+<Tabs defaultValue="account" className="m-8  ">
+  <TabsList className="w-full justify-between px-8 rounded-lg bg-gray-200">
+    <div>
+    <TabsTrigger value="account"  className="py-2">Profile</TabsTrigger>
+    <TabsTrigger value="orders">Orders</TabsTrigger>
+    <TabsTrigger value="downloads">Downloads</TabsTrigger>
+    <TabsTrigger value="payments">Payment Method</TabsTrigger>
+    </div>
+    <Button className=" bg-blue-800">LOG OUT </Button>
+  </TabsList>
+  <TabsContent value="account"><TabProfile /></TabsContent>
+  <TabsContent value="orders"><OrdersTab /></TabsContent>
+  <TabsContent value="downloads"><DownloadsTab /></TabsContent>
+  <TabsContent value="payments"><PaymentsTab /></TabsContent>
+</Tabs>
+
+
+
+    {/* <div className="bg-[url('/images/book.jpg')] bg-cover bg-no-repeat bg-center ">
       
     <div className="py-4 mx-5" > 
     <h4 className="text-5xl font-bold my-4 text-white font-weight-bold">Latest Content</h4>
@@ -56,7 +82,7 @@ export  default async function page() {
      
     </div>
 
-</div>
+</div> */}
     </div>
   )
 }
