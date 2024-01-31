@@ -22,7 +22,7 @@ export default function page() {
 
 
 
-    <div className="w-full  md:flex justify-items-center items-center bg-white rounded-xl p-8 md:p-0 dark:bg-slate-800 ">
+    <div className="w-full mx-auto md:h-64 md:flex justify-items-center items-center bg-white rounded-xl p-8 md:p-0 dark:bg-slate-800 ">
       <div className="w-1/2 pl-8">
     <div className="rounded-full w-40 h-40 bg-gradient-to-r from-slate-700 from-40%  to-white to-90% flex justify-center items-center">
   <div className="rounded-full bg-white w-32 h-32 relative z-0">
@@ -51,7 +51,7 @@ export default function page() {
 </div>
 
 
-<div className="w-full md:w-1/2 md:flex justify-items-center items-center bg-white rounded-xl p-8 md:p-0 dark:bg-slate-800 ">
+<div className="w-full mr-4 md:w-1/2  md:h-64 md:flex justify-items-center items-center bg-white rounded-xl p-8 md:p-0 dark:bg-slate-800 ">
 <div className="w-1/2 pl-8">
     <div className="rounded-full w-40 h-40 bg-gradient-to-r from-slate-700 from-40%  to-white to-90% flex justify-center items-center">
   <div className="rounded-full bg-white w-32 h-32 relative z-0">
@@ -81,7 +81,7 @@ export default function page() {
 
       
 
-<div className="w-full md:w-1/2 md:flex justify-items-center items-center bg-white rounded-xl p-8 md:p-0 dark:bg-slate-800 ">
+<div className="w-full mr-4 md:w-2/5 md:h-64 md:flex justify-items-center items-center bg-white rounded-xl p-8 md:p-0 dark:bg-slate-800 ">
       <div className="w-1/2 pl-8">
     <div className="rounded-full w-40 h-40 bg-gradient-to-r from-slate-700 from-40%  to-white to-90% flex justify-center items-center">
   <div className="rounded-full bg-white w-32 h-32 relative z-0">
@@ -111,7 +111,7 @@ export default function page() {
 
      
 
-<div className="w-full md:w-1/2 md:flex justify-items-center items-center bg-white rounded-xl p-8 md:p-0 dark:bg-slate-800 ">
+<div className="w-full mr-4 md:w-2/5 md:h-64 md:flex justify-items-center items-center bg-white rounded-xl p-8 md:p-0 dark:bg-slate-800 ">
       <div className="w-1/2 pl-8">
     <div className="rounded-full w-40 h-40 bg-gradient-to-r from-slate-700 from-40%  to-white to-90% flex justify-center items-center">
   <div className="rounded-full bg-white w-32 h-32 relative z-0">
@@ -140,7 +140,7 @@ export default function page() {
 </div>
 
    
-<div className="w-full md:w-1/2 md:flex justify-items-center items-center bg-white rounded-xl p-8 md:p-0 dark:bg-slate-800 ">
+<div className="w-full mr-4 md:w-1/2 md:h-64 md:flex justify-items-center items-center bg-white rounded-xl p-8 md:p-0 dark:bg-slate-800 ">
       <div className="w-1/2 pl-8">
     <div className="rounded-full w-40 h-40 bg-gradient-to-r from-slate-700 from-40%  to-white to-90% flex justify-center items-center">
   <div className="rounded-full bg-white w-32 h-32 relative z-0">
