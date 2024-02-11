@@ -14,7 +14,13 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import {
+  MagnifyingGlassCircleIcon,
+  Cog6ToothIcon,
+  BellAlertIcon
+} from "@heroicons/react/24/outline";
 import { FaArrowDown, FaAlignJustify } from "react-icons/fa";
+import { Input } from '@/components/ui/input';
 
 const NavAdmin = () => {
     const { data: session, status } = useSession()
@@ -50,7 +56,10 @@ const NavAdmin = () => {
             }`}
           >
             <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-            {session && session.user?.name ? (
+
+             
+            
+            {/* {session && session.user?.name ? (
                     <>  
                     <Link href='/dashboard'>Dashboard</Link>
                     <Link href='/onboarding'>Onboarding</Link>
@@ -76,17 +85,32 @@ const NavAdmin = () => {
                     </>
                 ) : (
                 <>
-                {/* {menus.map((item, idx) => (
-                <li key={idx} className="text-gray-600 hover:text-white hover:bg-blue-600 hover:py-2 hover:px-4 hover:rounded">
-                  <Link href={item.path}>{item.title}</Link>
-                </li>
-                ))} */}
+               
               </>
-              )}
+              )} */}
             </ul>
           </div>
           <div>
           <ul className="justify-center items-center  space-y-4 md:flex md:space-x-6 md:space-y-0">
+          <div className="relative flex items-center text-gray-400 focus-within:text-gray-600">
+        <MagnifyingGlassCircleIcon className="w-5 h-5 absolute ml-3 pointer-events-none"/>
+        <Input
+          type="text"
+          name="search"
+          placeholder="Search talk"
+          aria-label="Search talk"
+          className="w-full pr-3 pl-10 py-2 font-semibold placeholder-gray-500 text-black rounded-2xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2"
+        />
+      </div>
+      <div className="w-8 h-8 bg-gray-500 rounded-full p-2">
+                <Link href={'/'} ><Cog6ToothIcon /></Link>
+              </div>
+              <div className="w-8 h-8 bg-gray-500 rounded-full p-2">
+              <Link href={'/'} >
+                <BellAlertIcon />
+                </Link>
+              </div>
+
             {session && session.user?.image  ? (
                     <>  
           <DropdownMenu>

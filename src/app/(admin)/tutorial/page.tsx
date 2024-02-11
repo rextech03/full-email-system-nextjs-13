@@ -12,7 +12,7 @@ export  default async function page() {
   const categories = categoriesData.category;
 
   return (
-    <div className="min-h-screen w-screen">
+    <div className="min-h-screen w-full">
     <div className="bg-[url('/images/book.jpg')] ">
       
     <div className="py-4 mx-5" > 

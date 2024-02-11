@@ -4,6 +4,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { defaultNavItems } from "./defaultNavItems";
 import { useOnClickOutside } from "usehooks-ts";
+import { useSession } from "next-auth/react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { FaArrowDown, FaAlignJustify } from "react-icons/fa";
 // define a NavItem prop
 export type NavItem = {
   label: string;
@@ -17,6 +27,9 @@ type Props = {
   setOpen(open: boolean): void;
 };
 const Sidebar = ({ open, navItems = defaultNavItems, setOpen }: Props) => {
+
+  const { data: session, status } = useSession()
+
   const ref = useRef<HTMLDivElement>(null);
   useOnClickOutside(ref, (e) => {
     setOpen(false);
@@ -38,6 +51,7 @@ const Sidebar = ({ open, navItems = defaultNavItems, setOpen }: Props) => {
         <ul className="py-2 flex flex-col gap-2">
           {navItems.map((item, index) => {
             return (
+            
               <Link key={index} href={item.href}>
                 <li
                   className={classNames({
@@ -50,8 +64,22 @@ const Sidebar = ({ open, navItems = defaultNavItems, setOpen }: Props) => {
                   {item.icon} {item.label}
                 </li>
               </Link>
+
             );
           })}
+           {session!.user?.role == "user" ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger> <div className="flex bg-gray-200 justify-items-center items-center  rounded p-2 "><p>Manage</p><FaArrowDown  /></div></DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuLabel><Link href="/users">Users</Link></DropdownMenuLabel>
+                    <DropdownMenuLabel><Link href='/categories'>Category</Link></DropdownMenuLabel>
+                    <DropdownMenuLabel><Link href='/courses'>Courses</Link></DropdownMenuLabel>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+              <>
+              </>
+              )} 
         </ul>
       </nav>
       {/* account  */}

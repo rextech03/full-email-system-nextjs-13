@@ -21,12 +21,12 @@ export const defaultNavItems: NavItem[] = [
   },
   {
     label: "Note Book",
-    href: "/projects",
+    href: "https://paystack.com/pay/materialsaccess",
     icon: <FolderIcon className="w-6 h-6" />,
   },
   {
     label: "Courses",
-    href: "/courses",
+    href: "/tutorial",
     icon: <CalendarIcon className="w-6 h-6" />,
   },
   {

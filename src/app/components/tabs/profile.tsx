@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 
 export default function TabProfile() {
 
-    const { data: session, status } = useSession()
+    const { data: session, status } = useSession();
    
 
   return (
