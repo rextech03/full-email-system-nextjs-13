@@ -32,7 +32,7 @@ const ProtectedLayout =  ({children}: ProtectedLayoutProps) => {
         <NavAdmin />
       </div>
     
-      <div className="min-h-screen md:max-w-screen flex">
+      <div className="min-h-screen md:max-w-screen flex ">
         <div className="w-1/6">
     <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
     </div>

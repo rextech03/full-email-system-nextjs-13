@@ -34,11 +34,11 @@ const NavAdmin = () => {
     ]
 
     return (
-        <nav className=" bg-gray-300 sticky top-0 w-full border-b md:border-0 max-w-screen">
+        <nav className=" bg-gray-300 sticky top-0 w-full border-b md:border-0 max-w-screen h-16">
         <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:justify-between md:px-8">
-          <div className="flex items-center justify-between  md:block">
-          <Link href="/" className=''>
-              <Image src="/images/logo.png" alt="logo" width={180} height={180} className="h-16 w-16 bg-white p-1" />
+          <div className=" flex items-center justify-between  md:block">
+          <Link href="/" className='absolute top-6 max-sm:right-[154px] z-50'>
+              <Image src="/images/logo.png" alt="logo" width={180} height={180} className="max-sm:w-16 max-sm:h-16 h-32 w-32 motion-safe:animate-pulse" />
             </Link>
             <div className="md:hidden">
               
@@ -91,7 +91,7 @@ const NavAdmin = () => {
             </ul>
           </div>
           <div>
-          <ul className="justify-center items-center  space-y-4 md:flex md:space-x-6 md:space-y-0">
+          <ul className=" py-4 justify-center items-center  space-y-4 md:flex md:space-x-6 md:space-y-0">
           <div className="relative flex items-center text-gray-400 focus-within:text-gray-600">
         <MagnifyingGlassCircleIcon className="w-5 h-5 absolute ml-3 pointer-events-none"/>
         <Input
@@ -113,26 +113,24 @@ const NavAdmin = () => {
 
             {session && session.user?.image  ? (
                     <>  
-          <DropdownMenu>
-                      <DropdownMenuTrigger> <div className="flex bg-gray-200 justify-items-center items-center  rounded-full p-2 ">
-                        <div className='pr-2'>
-                          {/* <p>{session.user.name}</p> */}
-                          {/* {session.user.image ?  */}
-                          
-                          <Image src={session.user.image} alt="avatar" 
+                    <Link href={'/profile'} >
+                    <Image src={session.user.image} alt="avatar" 
                           width={36} height={36} 
                           className='w-8 h-8 rounded-full '/> 
-                          {/* : <></>} */}
+                    </Link>
+          {/* <DropdownMenu>
+                      <DropdownMenuTrigger> <div className="flex bg-gray-200 justify-items-center items-center  rounded-full p-2 ">
+                        <div className='pr-2'>
+                        
                         </div><FaArrowDown  /></div>
                         </DropdownMenuTrigger>
                       <DropdownMenuContent>
-                        {/* <DropdownMenuLabel><Link href="/user/profile">Profile</Link></DropdownMenuLabel> */}
                         <DropdownMenuLabel><Link href='/user/profile'>Profile</Link></DropdownMenuLabel>
                         <DropdownMenuLabel><Link href={`/user/profilePhoto/`} >Edit Profile Photo</Link></DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuLabel><Link href='/auth/signout'>Sign out</Link></DropdownMenuLabel>
                       </DropdownMenuContent>
-                    </DropdownMenu>
+                    </DropdownMenu> */}
 
                     </>
                 ) : (
