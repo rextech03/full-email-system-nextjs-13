@@ -7,38 +7,33 @@ import Link from 'next/link';
 import TestEmailButton from './TestEmailButton';
 import Image from 'next/image';
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import {
   MagnifyingGlassCircleIcon,
   Cog6ToothIcon,
   BellAlertIcon
 } from "@heroicons/react/24/outline";
 import { FaArrowDown, FaAlignJustify } from "react-icons/fa";
 import { Input } from '@/components/ui/input';
+import { usePathname } from 'next/navigation';
 
 const NavAdmin = () => {
+
+  {/* Get the current route */}
+const currentRoute = usePathname();
+
     const { data: session, status } = useSession()
     const [state, setState] = useState(false)
 
     const menus = [
       { title: "Login", path: "/auth/signin" },
       { title: "Register", path: "/auth/signup" },
-      // { title: "About Us", path: "/your-path" },
-      // { title: "Contact Us", path: "/your-path" },
     ]
 
     return (
-        <nav className=" bg-gray-300 sticky top-0 w-full border-b md:border-0 max-w-screen h-16">
+        <nav className=" bg-white sticky top-0 w-full border-b md:border-0 max-w-screen h-16">
         <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:justify-between md:px-8">
           <div className=" flex items-center justify-between  md:block">
-          <Link href="/" className='absolute top-6 max-sm:right-[154px] z-50'>
-              <Image src="/images/logo.png" alt="logo" width={180} height={180} className="max-sm:w-16 max-sm:h-16 h-32 w-32 motion-safe:animate-pulse" />
+          <Link href="/" className=' absolute top-6 max-sm:right-[154px] z-50'>
+              <Image src="/images/logo.png" alt="logo" width={360} height={360} className="max-sm:w-28 max-sm:h-28 h-44 w-44 motion-safe:animate-pulse" />
             </Link>
             <div className="md:hidden">
               
@@ -58,7 +53,7 @@ const NavAdmin = () => {
             <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
 
              
-            
+            <h4 className='capitalize text-2xl font-bold text-blue-600'>{currentRoute.substring(1, 35)}</h4>
             {/* {session && session.user?.name ? (
                     <>  
                     <Link href='/dashboard'>Dashboard</Link>

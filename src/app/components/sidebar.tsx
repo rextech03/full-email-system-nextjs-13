@@ -1,3 +1,4 @@
+"use client";
 import React, { useRef } from "react";
 import classNames from "classnames";
 import Link from "next/link";
@@ -14,6 +15,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { FaArrowDown, FaAlignJustify } from "react-icons/fa";
+import { usePathname } from 'next/navigation';
+
 // define a NavItem prop
 export type NavItem = {
   label: string;
@@ -28,6 +31,10 @@ type Props = {
 };
 const Sidebar = ({ open, navItems = defaultNavItems, setOpen }: Props) => {
 
+  
+{/* Get the current route */}
+const currentRoute = usePathname();
+
   const { data: session, status } = useSession()
 
   const ref = useRef<HTMLDivElement>(null);
@@ -37,7 +44,7 @@ const Sidebar = ({ open, navItems = defaultNavItems, setOpen }: Props) => {
   return (
     
     <div 
-    className="bg-indigo-700 h-full"
+    className="bg-white h-full"
       // className={classNames({
       //   "flex flex-col justify-between": true, // layout
       //   "bg-indigo-700 text-zinc-50": true, // colors
@@ -57,25 +64,29 @@ const Sidebar = ({ open, navItems = defaultNavItems, setOpen }: Props) => {
           {navItems.map((item, index) => {
             return (
             
-              <Link key={index} href={item.href} className="">
-                <li
-
-                  className={classNames({
-                    "text-indigo-100 hover:bg-indigo-900": true, //colors
-                    "flex gap-4 items-center ": true, //layout
-                    "transition-colors duration-300": true, //animation
-                    "rounded-md p-2 mx-2 ": true, //self style
-                  })}
+              <Link key={index} href={item.href} 
+                  className={currentRoute === item.href
+                  ? "bg-indigo-600 text-indigo-100 hover:bg-indigo-900 flex gap-4 items-center transition-colors duration-300 rounded-md p-2 mx-2"
+                  : "text-grey-800 hover:bg-indigo-900 flex gap-4 items-center transition-colors duration-300 rounded-md p-2 mx-2"}
+                  // className={classNames({currentRoute === "/some-path"
+                  // ?
+                  //   "text-indigo-100 hover:bg-indigo-900": true, //colors
+                  //   "flex gap-4 items-center ": true, //layout
+                  //   "transition-colors duration-300": true, //animation
+                  //   "rounded-md p-2 mx-2 ": true, //self style
+                  //   :
+                  //   "text-gray-700"
+                  // })}
                 >
                   {item.icon} {item.label}
-                </li>
+                
               </Link>
 
             );
           })}
            {session!.user?.role == "user" ? (
                 <DropdownMenu >
-                  <DropdownMenuTrigger  className="flex gap-4 items-center  rounded p-2 text-indigo-100"><FaArrowDown  /> Manage</DropdownMenuTrigger>
+                  <DropdownMenuTrigger  className=" text-indigo-100 hover:bg-indigo-900 flex gap-4 items-center transition-colors duration-300 rounded-md p-2 mx-2"><FaArrowDown  /> Manage</DropdownMenuTrigger>
                   <DropdownMenuContent className="text-indigo-900">
                     <DropdownMenuLabel><Link href="/users">Users</Link></DropdownMenuLabel>
                     <DropdownMenuLabel><Link href='/categories'>Category</Link></DropdownMenuLabel>
