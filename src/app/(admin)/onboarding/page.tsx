@@ -6,10 +6,10 @@ import Link from "next/link";
 export default function page() {
   return (
     <div className="w-full ">
-      <div className="relative">
+      <div className="relative z-10">
       <Image src={'/images/coverboard.png'} width={625} height={562} className="w-full h-72" alt="cover photo" />
         
-        <div className=" absolute top-40 py-4 pl-52">
+        <div className=" text-center py-4 pl-52">
         <h4 className="text-center text-blue-600 text-3xl font-bold">WELCOME! <br />Follow the steps below to complete your onboarding!</h4>
     <div className="border-b-2 border-blue-600 w-40 mx-auto pt-4" />
         </div>
