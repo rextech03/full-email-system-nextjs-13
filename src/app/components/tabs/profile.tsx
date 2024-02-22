@@ -72,7 +72,7 @@ export default function TabProfile() {
             {/* Addresses */}
             <div className="my-4"></div>
 
-            <div className="container rounded-xl p-8 flex w-full bg-white ">
+            <div className=" rounded-xl p-8 flex w-full bg-white ">
                 <div className=' w-1/2 mr-4'>
 
                    

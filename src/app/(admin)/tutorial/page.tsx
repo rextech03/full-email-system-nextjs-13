@@ -13,7 +13,7 @@ export  default async function page() {
 
   return (
     <div className="min-h-screen w-full">
-    <div className="bg-[url('/images/book.jpg')] ">
+    <div className="bg-[url('/images/book.jpg')] h-1/2">
       
     <div className="py-4 mx-5" > 
     <h4 className="text-5xl font-bold my-4 text-white font-weight-bold">Latest Content</h4>
@@ -30,9 +30,9 @@ export  default async function page() {
 </div>
 </div>
 
-<div className="container  py-2 bg-gray-400">
-    <h4 className="text-5xl font-bold my-4 text-black font-weight-bold">Lessons</h4>
-    <div className="flex flex-wrap gap-4 min-h-screen w-full  ">
+<div className="  py-2 bg-gray-400">
+    <h4 className="text-5xl font-bold mx-5 my-4 text-black font-weight-bold">Lessons</h4>
+    <div className="flex flex-wrap gap-4  w-full mx-5 ">
      
     {categories?.map((category) => (
     <div key={category.id}>
@@ -46,6 +46,8 @@ export  default async function page() {
     </div>
 
 </div>
+
+
     </div>
   )
 }

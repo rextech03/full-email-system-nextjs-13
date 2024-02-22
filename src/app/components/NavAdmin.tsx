@@ -29,6 +29,7 @@ const currentRoute = usePathname();
     ]
 
     return (
+      // TODO: make sticky
         <nav className=" bg-white sticky top-0 w-full border-b md:border-0 max-w-screen h-16">
         <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:justify-between md:px-8">
           <div className=" flex items-center justify-between  md:block">

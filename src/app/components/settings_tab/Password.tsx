@@ -20,14 +20,14 @@ export default function Password() {
             </Link>
         </div>
         <div className="w-4/5">
-          <div className="flex justify-between items-start py-4 ">
+          <div className="flex-col justify-between items-start py-4 ">
             <div>
               <Label htmlFor='name'>Current Password:</Label>
               <Input type='password' placeholder='password' className='w-full'/>
             
               
             </div>
-
+            <div className="py-4"></div>
             <div>
               <Label htmlFor='name'>New Password:</Label>
               <Input type='password' placeholder='password' className='w-full'/>

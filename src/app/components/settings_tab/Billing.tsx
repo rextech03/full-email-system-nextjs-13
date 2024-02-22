@@ -20,50 +20,66 @@ export default function Billing() {
             </Link>
         </div>
         <div className="w-4/5">
-          <div className="flex justify-between items-start py-4 ">
-            <div>
+
+          <div className="flex-col ">
+            <div className="flex justify-between items-start py-4 ">
+              <div className='w-full mr-8'>
               <Label htmlFor='name'>First Name:</Label>
               <Input placeholder={session!.user?.name.split(' ')[0]} className='w-full'/>
-            
+              </div>
+              <div className='w-full mr-8'>
               <Label htmlFor='name'>Company Name (Optional):</Label>
               <Input placeholder={'company'} className='w-full'/>
+              </div>
             </div>
 
-            <div>
+            <div className="flex justify-between items-start py-4 ">
+            <div className='w-full mr-8'>
               <Label htmlFor='name'>Last Name:</Label>
               <Input placeholder={session!.user?.name.split(' ')[1]} className='w-full'/>
-            
+            </div>
+            <div className='w-full mr-8'>
               <Label htmlFor='name'>Email:</Label>
               <Input placeholder={session!.user?.email} className='w-full'/>
             </div>
+            </div>
 
-            <div>
+            <div className="flex justify-between items-start py-4 ">
+            <div className='w-full mr-8'>
               <Label htmlFor='name'>Country / Region:</Label>
               <Input placeholder={'Nigeria'} className='w-full'/>
-            
+              </div>
+              <div className='w-full mr-8'>
               <Label htmlFor='name'>State:</Label>
               <Input placeholder='State' className='w-full'/>
             </div>
+            </div>
 
-            <div>
+            <div className="flex justify-between items-start py-4 ">
+            <div className='w-full mr-8'>
               <Label htmlFor='name'>Town / City:</Label>
               <Input placeholder={'Nigeria'} className='w-full'/>
-            
+              </div><div className='w-full mr-8'>
               <Label htmlFor='name'>Phone:</Label>
               <Input placeholder='State' className='w-full'/>
             </div>
+            </div>
 
-            <div>
+            <div className="flex justify-between items-start py-4 ">
+            <div className='w-full mr-8'>
               <Label htmlFor='name'>Street Address:</Label>
               <Input placeholder={'Nigeria'} className='w-full'/>
-            
+              </div><div className='w-full mr-8'>
               <Label htmlFor='name'>Apartment, suit, unit. e.t.c. (Optional):</Label>
               <Input placeholder='State' className='w-full'/>
             </div>
             </div>
-            <div>
-              <Button className='bg-blue-600 px-8 py-4' >Save</Button>
+<div className="my-4"></div>
+            <div className='flex justify-center items-center'>
+              <Button className='bg-blue-600 w-1/4' >Save</Button>
             </div>
+            </div>
+           
         </div>
     </div>
 </div>

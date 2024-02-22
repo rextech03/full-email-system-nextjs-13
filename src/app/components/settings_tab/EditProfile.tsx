@@ -21,20 +21,18 @@ export default function EditProfile() {
             </Link>
         </div>
         <div className="w-4/5">
-          <div className="flex justify-between items-start py-4 ">
-            <div>
+          <div className="flex-col justify-between items-start py-4 ">
+           
               <Label htmlFor='name'>First Name:</Label>
               <Input placeholder={session!.user?.name.split(' ')[0]} className='w-full'/>
             
               <Label htmlFor='name'>Email:</Label>
               <Input placeholder={session!.user?.email} className='w-full'/>
-            </div>
-
-            <div>
+            
               <Label htmlFor='name'>Last Name:</Label>
               <Input placeholder={session!.user?.name.split(' ')[1]} className='w-full'/>
             
-            </div>
+           
             </div>
             <div>
               <Button className='bg-blue-600 px-8 py-4' >Save</Button>
