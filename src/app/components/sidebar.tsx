@@ -44,16 +44,16 @@ const currentRoute = usePathname();
   return (
     
     <div 
-    className="bg-white h-full"
+    className="bg-white h-full  md:w-full md:sticky md:top-16 md:z-0 top-0 -z-20 fixed"
       // className={classNames({
       //   "flex flex-col justify-between": true, // layout
-      //   "bg-indigo-700 text-zinc-50": true, // colors
-      //   "md:w-full md:sticky md:top-16 md:z-0 top-0 z-20 fixed": true, // positioning
+      //   "bg-gray-100 text-zinc-50": true, // colors
+      //   "md:w-full md:sticky md:top-16 md:z-0 top-0 -z-20 fixed": true, // positioning
       //   "md:h-full h-full w-[300px]": true, // for height and width
       //   "transition-transform .3s ease-in-out md:-translate-x-0": true, //animations
       //   "-translate-x-full ": !open, //hide sidebar to the left when closed
       // })}
-      // ref={ref}
+      ref={ref}
     >
       <nav 
       className="md:sticky grid justify-center items-center min-h-screen"

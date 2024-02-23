@@ -26,18 +26,18 @@ const ProtectedLayout =  ({children}: ProtectedLayoutProps) => {
 
   return (
     <>
-    <div className="grid min-h-screen grid-rows-header bg-zinc-100">
-      <div>
-        {/* <Navbar onMenuButtonClick={() => setSidebarOpen((prev) => !prev)} /> */}
-        <NavAdmin />
-      </div>
+    <div className="min-h-screen z-50 ">
     
-      <div className="min-h-screen md:max-w-screen flex ">
+        <NavAdmin />
+    
+    
+      <div className="min-h-screen md:max-w-screen flex -z-20 ">
         <div className="w-1/6">
     <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
     </div>
     <div className="w-5/6">
-      {children}</div>
+      {children}
+      </div>
       </div>
         <Footer />
         </div>

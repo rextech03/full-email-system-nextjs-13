@@ -28,14 +28,14 @@ export  default async function page() {
     <div className="min-h-screen w-full">
 
 <Tabs defaultValue="account" className="m-8  ">
-  <TabsList className="w-full justify-between px-8 rounded-lg bg-gray-200">
-    <div>
-    <TabsTrigger value="account"  className="py-2">Profile</TabsTrigger>
-    <TabsTrigger value="orders">Orders</TabsTrigger>
-    <TabsTrigger value="downloads">Downloads</TabsTrigger>
-    <TabsTrigger value="payments">Payment Method</TabsTrigger>
+  <TabsList className="w-full max-sm:h-52 max-sm:flex-col justify-between px-8 rounded-lg bg-gray-200">
+    <div className="flex-col">
+    <TabsTrigger value="account"  className="max-sm:w-full ">Profile</TabsTrigger>
+    <TabsTrigger value="orders" className="max-sm:w-full">Orders</TabsTrigger>
+    <TabsTrigger value="downloads" className="max-sm:w-full">Downloads</TabsTrigger>
+    <TabsTrigger value="payments" className="max-sm:w-full">Payment Method</TabsTrigger>
     </div>
-    <Button className=" bg-blue-800">LOG OUT </Button>
+    <Button className="max-sm:w-full bg-blue-800">LOG OUT </Button>
   </TabsList>
   <TabsContent value="account"><TabProfile /></TabsContent>
   <TabsContent value="orders"><OrdersTab /></TabsContent>
